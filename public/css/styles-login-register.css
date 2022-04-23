@@ -43,24 +43,20 @@ a {
     height: 60vh;
 }
 
-.contenedor-register-general {
+.titulares{
+    text-align: center;
+}
+
+.contenedor-register {
+    width: 100vw;
+    padding: 20px 15px;
+    font-size: 12px;
     display: flex;
     justify-content: space-around;
 }
 
-.contenedor-register {
-    width: 40vw;
-    padding: 20px 15px;
-}
-
 .register-individual {
-    margin-bottom: 15px;
-}
-
-.register-individual label {
-    margin-bottom: 5px;
-    /*font-style: italic;*/
-    display: block;
+    margin-bottom: 10px;
 }
 
 .campos {
@@ -139,7 +135,7 @@ a {
     text-align: center;
 }
 
-.fa-wallet {
+.fa-running {
     color: white;
     align-self: center;
     padding-right: 3px;
@@ -175,11 +171,6 @@ a {
 .contenedor-iconos-footer {
     color: black;
     font-size: 25px;
-}
-
-.contenedor-cuerposTextos {
-    font-size: 12px;
-    line-height: 20px;
 }
 
 #copyright {
@@ -322,9 +313,5 @@ a {
         padding: 10px 10px;
         width: 35vh;
 
-    }
-
-    .contenedor-iconos-footer:hover {
-        color: #0022AA;
     }
 }
