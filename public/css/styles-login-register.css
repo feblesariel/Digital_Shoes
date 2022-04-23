@@ -19,6 +19,9 @@ main {
     background-color: white;
     margin: auto;
     width: 100vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
 }
 
 footer {
@@ -37,10 +40,8 @@ a {
 
 .main-register {
     height: 60vh;
-}
-
-.main-login {
-    height: 60vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .titulares{
@@ -48,11 +49,10 @@ a {
 }
 
 .contenedor-register {
-    width: 100vw;
+    width: 25vw;
     padding: 20px 15px;
     font-size: 12px;
-    display: flex;
-    justify-content: space-around;
+    align-self: center;
 }
 
 .register-individual {
@@ -67,18 +67,6 @@ a {
 }
 
 .botones {
-    background-color: #e02f2f;
-    color: white;
-    border: none;
-    font-size: 20px;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-/* BOTON ENVIAR LOGIN */
-
-.boton-send-login {
-
     background-color: #e02f2f;
     color: white;
     border: none;
@@ -109,12 +97,8 @@ a {
     width: 33vw;
 }
 
-.imageLogo {    
-    color: white;
-    font-size: 40px;    
-    height: 10vh;
-    font-style: italic;
-    font-weight: bold; 
+.imageLogo {
+    width: 33vw;
 }
 
 .barraBusqueda {
