@@ -1,0 +1,330 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    padding: 0px;    
+}
+
+body {
+    background-color: white;
+    width: 100vw;
+}
+
+header {
+    background-color: #e02f2f;
+    width: 100vw;
+}
+
+main {
+    background-color: white;
+    margin: auto;
+    width: 100vw;
+}
+
+footer {
+    background-color: #ededed;
+    width: 100vw;
+}
+
+/* LINKS */
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+/* PAGINA DE REGISTO - LOGIN */
+
+.main-register {
+    height: 60vh;
+}
+
+.main-login {
+    height: 60vh;
+}
+
+.contenedor-register-general {
+    display: flex;
+    justify-content: space-around;
+}
+
+.contenedor-register {
+    width: 40vw;
+    padding: 20px 15px;
+}
+
+.register-individual {
+    margin-bottom: 15px;
+}
+
+.register-individual label {
+    margin-bottom: 5px;
+    /*font-style: italic;*/
+    display: block;
+}
+
+.campos {
+    width: 100%;
+    padding: 8px 8px;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+
+.botones {
+    background-color: #e02f2f;
+    color: white;
+    border: none;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* BOTON ENVIAR LOGIN */
+
+.boton-send-login {
+
+    background-color: #e02f2f;
+    color: white;
+    border: none;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.botones:hover {
+    background-color: #a81111;
+    transition: 450ms;
+}
+
+
+/* FIN REGISTRO - LOGIN */
+
+
+.contenedor-logo-barra {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#logo {  
+    height: 10vh;
+    flex-grow: 0.33;
+    width: 33vw;
+}
+
+.imageLogo {    
+    color: white;
+    font-size: 40px;    
+    height: 10vh;
+    font-style: italic;
+    font-weight: bold; 
+}
+
+.barraBusqueda {
+    align-self: center;
+}
+
+.search {
+    width: 100%;
+    padding: 8px 8px;
+    border-radius: 5px;
+    border: none;
+}
+
+#eslogan {    
+    display: flex;
+    font-size: 11px;
+    height: 5vh;
+    text-align: center;
+}
+
+.fa-wallet {
+    color: white;
+    align-self: center;
+    padding-right: 3px;
+}
+
+#eslogan-text {
+    align-self: center;
+    color: white;
+}
+
+.contenedor-navBar-general {
+    color: white;
+    display: none;
+}
+
+.burger-menu {
+    text-align: center;
+}
+
+.fa-bars {
+    background-color:  white;
+    color: black;
+    border: none;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.contenedor-elementos-footer {
+    text-align: center;
+}
+
+.contenedor-iconos-footer {
+    color: black;
+    font-size: 25px;
+}
+
+.contenedor-cuerposTextos {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+#copyright {
+    font-size: 12px;
+    line-height: 20px;
+    text-align: left;
+}
+
+/* PANTALLAS TABLETS */
+
+@media (min-width: 361px) {
+
+    .contenedor-logo-barra {
+        flex-grow: 1;
+        justify-content: space-around;
+        text-align: center;
+    }
+
+    .imageLogo {
+        width: 33vw;
+        flex-grow: 0.33;
+    }
+
+    .barraBusqueda {
+        align-self: center;
+        width: 33vw;
+        flex-grow: 0.33;
+    }
+
+    .search {
+        width: 25vw;
+    }
+
+    #eslogan {
+        align-self: center;
+        font-size: 12px;
+        flex-grow: 0.33;
+        justify-content: center;
+        width: 33vw;
+    }
+
+    .contenedor-navBar-general {
+        display: block;
+        display: flex;
+        flex-direction: row;
+        flex-grow: 6;
+        font-size: 11px;
+        height: 30px;
+        justify-content: space-around;
+    }
+
+    .contenedor-navBar-left {
+        flex-grow: 0.2;
+        display: flex;
+        justify-content: space-around;
+        align-self: flex-end;
+    }
+
+    .contenedor-navBar-right {
+        flex-grow: 0.1;
+        display: flex;
+        justify-content: flex-end;
+        justify-content: space-around;
+        align-self: flex-end;
+    }
+
+    .burger-menu {
+        display: none;
+    }
+
+}
+
+/* PANTALLAS DE ESCRITORIO */
+
+@media (min-width: 769px) {
+
+    .contenedor-logo-barra {
+        flex-grow: 1;
+        justify-content: space-around;
+        text-align: center;
+    }
+
+    .imageLlogo {
+        flex-grow: 0.33;
+        width: 33vw;
+    }
+
+    .barraBusqueda {
+        align-self: center;
+        flex-grow: 0.33;
+        width: 33vw;
+    }
+
+    .search {
+        width: 25vw;
+    }
+
+    #eslogan {
+        align-self: center;
+        font-size: 12px;
+        flex-grow: 0.33;
+        justify-content: center;
+        width: 33vw;
+    }
+
+    .contenedor-navBar-general {
+        display: block;
+        display: flex;
+        flex-direction: row;
+        flex-grow: 6;
+        font-size: 14px;
+        height: 50px;
+        justify-content: space-around;
+    }
+
+    .contenedor-navBar-left {
+        flex-grow: 0.2;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .contenedor-navBar-right {
+        flex-grow: 0.1;
+        display: flex;
+        justify-content: flex-end;
+        justify-content: space-around;
+    }
+
+    .burger-menu {
+        display: none;
+    }
+
+    .contenedor-elementos-footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .elemento-footer {
+        padding: 10px 10px;
+        width: 35vh;
+
+    }
+
+    .contenedor-iconos-footer:hover {
+        color: #0022AA;
+    }
+}

@@ -1,12 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    
+    <header>
+        <div class="contenedor-logo-barra">
+            <div id="logo"><img class="imageLogo" src="/images/logo-mercado-liebre.svg" alt=""></div>
+            <form class="barraBusqueda">
+                <input class="search" type="search" placeholder="Buscar..." />
+            </form>
+            <div id="eslogan"><i class="fas fa-wallet"></i>
+                <p id="eslogan-text">Comprá en cuotas y sin tarjeta de crédito</p>
+            </div>
+        </div>
+        <div class="contenedor-navBar-general">
+            <div class="contenedor-navBar-left">
+                <a href="/">Ofertas</a>
+                <a href="/">Tiendas Oficiales</a>
+                <a href="/">Vender</a>
+                <a href="/">Ayuda</a>
+            </div>
+            <br>
+            <div class="contenedor-navBar-right">
+                <div><a href="/register">Creá tu cuenta</a> <i class="fas fa-user-alt"></i></div>
+                <div><a href="/login">Ingresá</a> <i class="fas fa-sign-in-alt"></i></div>
+                <div><a href="/">Mis compras</a> <i class="fas fa-shopping-basket"></i></div>
+            </div>
+        </div>
+        <br>
+        <div class="burger-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <br>
+    </header>
+    <main class="main-login">
+        <div class="contenedor-register-general">
+            <form class="contenedor-register" action="/" method="get">
+                <div class="register-individual">
+                    <label for="name"></label>
+                    <input type="text" name="name" id="name" class="campos" placeholder="Nombre de usuario">
+                </div>
+                <div class="register-individual">
+                    <label for="pass"></label>
+                    <input type="password" name="pass" id="pass" class="campos" placeholder="Constraseña">
+                </div>
+                <div class="register-individual">
+                    <button type="submit" class="botones">Enviar</button>
+                    <button type="reset" class="botones">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <br>
+        <div class="contenedor-elementos-footer">
+            <section class="elemento-footer">
+                <div class="contenedor-iconos-footer">
+                    <i class="fas fa-credit-card"></i>
+                </div>
+                <h3>Paga con tarjeta o en efectivo</h3>
+                <p class="contenedor-cuerposTextos">Con Digital Shoes Cash, tenés cuotas sin interés con tarjeta o
+                    efectivo
+                    en
+                    puntos
+                    de
+                    pago. ¡Y siempre es
+                    seguro!
+                </p>
+            </section>
+            <section class="elemento-footer">
+                <div class="contenedor-iconos-footer">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <h3>Envío gratis desde $ 2.500</h3>
+                <p class="contenedor-cuerposTextos">Solo por estar registrad@ en Digital Shoes tenés envíos gratis en
+                    miles
+                    de
+                    productos. Es
+                    un beneficio de
+                    Mercado Puntos.
+                </p>
+            </section>
+            <section class="elemento-footer">
+                <div class="contenedor-iconos-footer">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <h3>Seguridad, de principio a fin</h3>
+                <p class="contenedor-cuerposTextos">¿No te gusta? ¡Devolvelo! En Digital Shoes, no hay nada que no
+                    puedas
+                    hacer,
+                    porque
+                    estás siempre
+                    protegid@
+                </p>
+            </section>
+        </div>
+        <br>
+        <br>
+        <section>
+            <div id="copyright">Copyright © 2022-2022 Digital Shoes S.R.L.</div>
+        </section>
+    </footer>
 </body>
+
 </html>
