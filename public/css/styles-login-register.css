@@ -19,7 +19,7 @@ main {
     background-color: white;
     margin: auto;
     width: 100vw;
-    height: 60vh;
+    height: 65vh;
     display: flex;
     flex-direction: column;
 }
@@ -92,12 +92,15 @@ a {
 }
 
 #logo {  
+    display: flex;
+    justify-content: center;
     height: 10vh;
     flex-grow: 0.33;
     width: 33vw;
 }
 
 .imageLogo {
+    align-self: center;
     width: 33vw;
 }
 
