@@ -32,47 +32,78 @@
         </ul>
 
     </nav>
-    <header class="header">
-        <div class="carrito-general">
-            <div>
-                <div class="titulo">
-                    <h3>Carrito de compras</h3>
-                </div>
-                <ul class="subtitulos">
-                    <li>Productos</li>
-                    <li>Subtotal</li>
-                </ul>
-            </div>
+    <header>
 
-            <div class="contenedor-productos">
-                <img src="./images/zapatillas-nike-air-max_ccexpress.png" class="imagen" alt="">
-                <div class="nombre">Air Max</div>
-                <div class="precio">$1600.00</div>
-            </div>
-            <div class="descripciones">
-                <ul class="descripciones-izquierda">
-                    <li>Codigo postal</li>
-                    <li>Costo Envio CABA y GBA</li>
-                    <li>Retira en nuestra tienda</li>
-                    <li class="total">TOTAL.-</li>
-                </ul>
-                <ul class="descripciones-derecha">
-                    <li>1650</li>
-                    <li>$700</li>
-                    <li>Gratis!</li>
-                    <li class="total">$2300.00</li>
-                </ul>
-            </div>
-            <div>
-                <div class="contenedor-botones">
-                    <a href="/"><button type="submit" class="button">Seguir comprando</button></a>
-                    <a href="/"><button type="reset" class="button1">Iniciar compra</button></a>
-                </div>
-            </div>
-        </div>
     </header>
 
     <main>
+
+
+
+        <br>
+        <div class="contenedor-carrito">
+            <br>
+            <div class="titulo">
+                <h2>Carrito de compras</h2>
+            </div>
+            <br>
+            <div class="subtitulos">
+                <p>Productos</p>
+                <p>Cantidad</style>
+                </p>
+            </div>
+            <br>
+            <div class="contenedor-prod-cant">
+                <div class="contenedor-producto">
+                    <img src="./images/zapatillas-nike-air-max_ccexpress.png" class="imagen" alt="">
+                    <div class="nombre">Air Max</div>
+                    <div class="precio">$1600.00</div>
+                </div>
+                <div class="cant">
+                    <form action="" method="GET" class="cant">
+                        <select name="cantidad">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+            <br>
+            <div class="descripciones">
+                <br>
+                <div class="descripciones-izquierda">
+                    <div>
+                        <p>Envio CABA y GBA ($700)</p>
+                        <p>Retira en nuestra tienda (Sin costo)</p>
+                    </div>
+                    <div class="radios">
+                        <input type="radio" name="medio-de-pago" value="Efectivo">
+                        <input type="radio" name="medio-de-pago" value="Débito">
+                    </div>
+                </div>
+                <br>
+                <p class="total">SUBTOTAL</p>
+                <p class="total">$1.600,00-</p>
+                <p class="total">$700,00-</p>
+                <br>
+                <p class="total">TOTAL</p>
+                <div class="descripciones-derecha">
+                    <p class="total">$2.300,00-</p>
+                </div>
+            </div>
+            <div>
+                <br>
+                <br>
+                <div class="contenedor-botones">
+                    <a href="/"><button type="submit" class="button">Confirmar</button></a>
+                    <a href="/"><button type="reset" class="button">Seguir comprando</button></a>
+                </div>
+            </div>
+        </div>
+
+
+
 
     </main>
 

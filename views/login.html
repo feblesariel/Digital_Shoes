@@ -15,37 +15,28 @@
 
 <body>
     <header>
-        <div class="contenedor-logo-barra">
-            <div id="logo"><img class="imageLogo" src="/images/logo.png" alt=""></div>
-            <form class="barraBusqueda">
-                <input class="search" type="search" placeholder="Buscar..." />
-            </form>
-            <div id="eslogan"><i class="fas fa-running"></i>
-                <p id="eslogan-text">Las Mejores Marcas y Lanzamientos</p>
+        <nav>
+            <div>
+                <a href="/"><img src="./images/logo.png" alt="" class="logo"></a>
             </div>
-        </div>
-        <div class="contenedor-navBar-general">
-            <div class="contenedor-navBar-left">
-                <a href="/">Ofertas</a>
-                <a href="/">Lanzamientos</a>
-                <a href="/">Tiendas</a>
-                <a href="/">Ayuda</a>
-            </div>
-            <br>
-            <div class="contenedor-navBar-right">
-                <div><a href="/register">Abri tu cuenta</a> <i class="fas fa-user-alt"></i></div>
-                <div><a href="/login">Accede</a> <i class="fas fa-sign-in-alt"></i></div>
-                <div><a href="/">Carrito de compras</a> <i class="fas fa-shopping-basket"></i></div>
-            </div>
-        </div>
-        <br>
-        <div class="burger-menu">
-            <i class="fas fa-bars"></i>
-        </div>
-        <br>
+    
+            <input type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+          <i class="fas fa-bars"></i>
+        </label>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/product">Productos</a></li>
+                <li><a href="/register">Registrate</a></li>
+                <li><a href="/login">Login <i class="fas fa-sign-in-alt"></i></a></li>
+                <li><a href="/carrito">Carrito <i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+    
+        </nav>
     </header>
-    <main class="main">
+    <main>
         <br>
+        <div class="contenedor-general">
         <h2 class="titulares">Iniciar Sesión</h2>
         <div class="contenedor-register">
         <form action="/" method="get">
@@ -67,37 +58,61 @@
             </div>
         </form>
         </div>
+    </div>
     </main>
-    <footer>
-        <br>
-        <div class="contenedor-elementos-footer">
-            <section class="elemento-footer">
-                <div class="contenedor-iconos-footer">
-                    <i class="fas fa-credit-card"></i>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <h4>NOSOTROS</h4>
+                    <ul>
+                        <li><a href="#">¿Quienes somos?</a></li>
+                        <li><a href="#">Tiendas</a></li>
+                        <li><a href="#">Legal</a></li>
+                        <li><a href="#">TRABAJA CON NOSOTROS</a></li>
+                    </ul>
                 </div>
-                <br>
-                <h3>Todas las formas de pago</h3>
-            </section>
-            <section class="elemento-footer">
-                <div class="contenedor-iconos-footer">
-                    <i class="fas fa-truck"></i>
+                <div class="footer-col">
+                    <h4>ASISTENCIA</h4>
+                    <ul>
+                        <li><a href="#">Faq</a></li>
+                        <li><a href="#">Condiciones y Restricciones</a></li>
+                        <li><a href="#">Mi cuenta</a></li>
+                        <li><a href="#">Rastreo de pedidos</a></li>
+                    </ul>
                 </div>
-                <br>
-                <h3>Envío gratis a todo el pais</h3>
-            </section>
-            <section class="elemento-footer">
-                <div class="contenedor-iconos-footer">
-                    <i class="fas fa-user-shield"></i>
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="#">Zapatillas</a></li>
+                        <li><a href="#">Relojes</a></li>
+                        <li><a href="#">Sudaderas</a></li>
+                        <li><a href="#">Chándal</a></li>
+                    </ul>
                 </div>
-                <br>
-                <h3>Sitio totalmente seguro</h3>
-            </section>
+                <div class="footer-col">
+                    <h4>SÍGUENOS EN</h4>
+                    <div class="wrapper">
+                        <div class="icon facebook">
+
+                            <span><i class="fab fa-facebook-f"></i></span>
+                        </div>
+                        <div class="icon twitter">
+
+                            <span><i class="fab fa-twitter"></i></span>
+                        </div>
+                        <div class="icon instagram">
+
+                            <span><i class="fab fa-instagram"></i></span>
+                        </div>
+                        <div class="icon youtube">
+
+                            <span><i class="fab fa-youtube"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <br>
-        <br>
-        <section>
-            <div id="copyright">Copyright © 2022 Digital Shoes S.R.L.</div>
-        </section>
     </footer>
 </body>
 
