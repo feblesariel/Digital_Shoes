@@ -15,6 +15,8 @@ main {
     height: 65vh;
     display: flex;
     flex-direction: column;
+    margin-bottom: 200px;
+    
 }
 
 /*--- NAVBAR ---*/
@@ -77,13 +79,27 @@ input[type="checkbox"] {
     display: none;
 }
 
-@media (max-width: 1000px) {
+@media  screen and (min-width: 1000px) {
     nav {
         padding: 0 40px 0 50px;
     }
+    
+    main{
+        margin-bottom: 250px;
+    }
+    div>.contenedor-producto {
+        width: 20vw;
+        height: 40vh;
+        border-radius: 0px;
+        border: 0.5px solid gray;
+    }
+    .imagen {
+        width: 20vw;
+    }
+   
 }
 
-@media (max-width: 920px) {
+@media screen and (max-width: 920px) {
     nav .menu-btn i {
         display: block;
     }
@@ -131,6 +147,18 @@ input[type="checkbox"] {
         background: none;
         color: cyan;
     }
+    main{
+        margin-bottom: -100px;
+    }
+    div>.contenedor-producto {
+        width: 30vw;
+        height: 20vh;
+        border-radius: 0px;
+        border: 0.5px solid gray;
+    }
+    .imagen {
+        width: 30vw;
+    }
 }
 
 /*--- HEADER ---*/
@@ -157,7 +185,7 @@ input[type="checkbox"] {
 
 
 .contenedor-carrito {
-    width: 35vw;
+    width: 90vw;
     border-radius: 15px;
     border: 0.5px solid gray;
     padding: 20px 20px;
@@ -178,17 +206,17 @@ input[type="checkbox"] {
 .contenedor-prod-cant {
     display: flex;
     justify-content: space-between;
+  
 }
 
 .contenedor-producto {
-    width: 7vw;
+    width: 40vw;
+    height: 20vh;
     border-radius: 0px;
     border: 0.5px solid gray;
+   
 }
 
-.imagen {
-    width: 7vw;
-}
 
 .cant {
     align-self: center;
@@ -245,6 +273,7 @@ input[type="checkbox"] {
 footer {
     height: auto;
     background-color: white;
+    
 }
 
 .footer-container {
@@ -336,6 +365,19 @@ footer {
         width: 50%;
         margin-bottom: 30px;
     }
+    main{
+        margin-bottom: 300px;
+    }
+    div>.contenedor-producto {
+        width: 25vw;
+        height: 40vh;
+        border-radius: 0px;
+        border: 0.5px solid gray;
+    }
+    
+.imagen {
+    width: 20vw;
+}
 }
 
 @media screen and (max-width: 564px) {
@@ -343,6 +385,20 @@ footer {
         width: 100%;
         margin-bottom: 30px;
     }
+    main{
+        width: 100%;
+        margin-bottom: 100px;
+    }
+    div>.contenedor-producto {
+        width: 30vw;
+        height: 20vh;
+        border-radius: 0px;
+        border: 0.5px solid gray;
+    }
+    
+.imagen {
+    width: 30vw;
+}
 }
 
 .wrapper {
