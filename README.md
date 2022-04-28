@@ -9,7 +9,7 @@
 Tienda virtual de zapatilas online
 
 
-## Iniciar Applicación
+## Iniciar aplicación
 
 Install
 ```
