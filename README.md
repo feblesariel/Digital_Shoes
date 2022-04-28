@@ -46,6 +46,15 @@ Open [http://localhost:3030](http://localhost:3030) para verla en el navegador.
 ## Morena Cruz
 [https://www.morenacruz.com.ar/](https://www.morenacruz.com.ar/)
 ![](https://github.com/feblesariel/Digital_Shoes/blob/master/Extras/imagen/morena.PNG)
+## Adidas
+[https://www.adidas.com/us](https://www.adidas.com/us)
+![](https://github.com/feblesariel/Digital_Shoes/blob/master/Extras/imagen/adidas.PNG)
+## Fila
+[https://www.fila.com/us](https://www.fila.com/us)
+![](https://github.com/feblesariel/Digital_Shoes/blob/master/Extras/imagen/fila.PNG)
+## Nike
+[https://www.nike.com/jordan](https://www.nike.com/jordan)
+![](https://github.com/feblesariel/Digital_Shoes/blob/master/Extras/imagen/jordan.PNG)
 <br><br><br>
 ## El proyecto 
 <br><br>
