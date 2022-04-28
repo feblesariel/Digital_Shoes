@@ -6,7 +6,7 @@
 
 ## Descripción
 
-Tienda virtual de zapatillas online - trabajo para Sprint 1 - DigitalHouse
+Tienda virtual de zapatillas online - trabajo para Sprint 2 - DigitalHouse
 
 
 ## Iniciar aplicación
