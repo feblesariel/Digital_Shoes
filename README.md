@@ -28,7 +28,7 @@ Start
 La web corre en servidor local.<br />
 Open [http://localhost:3030](http://localhost:3030) para verla en el navegador.
 
-## Inspitación
+## Inspiración para el desarrollo
 
 # Miye
 [https://www.miye.com.ar/](https://www.miye.com.ar/)
