@@ -6,7 +6,7 @@
 
 ## Descripción
 
-Tienda virtual de zapatillas online - trabajo para Sprint 2 - DigitalHouse.<br><br> 
+Tienda virtual de zapatillas online - trabajo para Sprint 1 & 2 - DigitalHouse.<br><br> 
 La tematica se selecconó de ntre varias ideas como:<br><br>
 - Geofertas: Geolocalizacion de ofertas y promociones a su alrededor.
 - Gestión turística: Página enfocada a personal interesado en actividades de ocio, aventura y deportes.
