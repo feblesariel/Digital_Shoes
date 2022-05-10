@@ -4,15 +4,22 @@ const path = require('path');
 
 const app = express();
 
+const mainRouter= require ("./routes/mainRouter");
+
 const publicPath = path.resolve(__dirname, './public');
 
 app.use(express.static(publicPath));
+
+app.set ("view engine", "ejs");
+
+app.use('/', mainRouter);
 
 app.listen(3000, () => {
     console.log('Server running in 3000 port');
 });
 
-app.get('/', (req, res) => {
+
+/*app.get('/', (req, res) => {
     res.sendFile(path.resolve('./views/home.html'));
 });
 
@@ -31,3 +38,4 @@ app.get('/product', (req, res) => {
 app.get('/carrito', (req, res) => {
     res.sendFile(path.resolve('./views/carrito.html'));
 });
+*/
