@@ -1,0 +1,13 @@
+<% shoes.forEach((shoes)=> { %>
+    <div class="container">
+        <div class="product prod-desk">
+            <div class="product-card">
+          
+                <h2 class="name"><%= shoes.nombre %></h2>
+                <span class="price"><%= shoes.precio %></span>
+                <a class="popup-btn">Quick View</a>
+                <%- shoes.imagen %>
+               
+            </div>
+        </div>
+        <% }) %>  
