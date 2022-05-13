@@ -1,7 +1,9 @@
 Tomando en cuenta el equipo (sus labores, horarios y demás) llegamos a las siguientes conclusiones:
-#################################################################
+
+
 Sprint 1
-#################################################################
+
+
 -Comenzar hacer: Decidimos ralizar reuniones(weekly scrum) para exponer cada uno lo que ha realizado desde la ultima reunion.
 
 -Hacer mas: 
@@ -14,9 +16,11 @@ Sprint 1
 * Dividirnos las tareas de crear erpositorio, temas para trabajar, los sitios de referencia y los wireframes
 
 -Hacer menos: Dejar muchos dias de diferencia entre reuniones.
-#################################################################
+
+
 Sprint 2
-#################################################################
+
+
 -Comenzar hacer: Iniciar con el home, generar el css y de ello generar las demas vistas, y subsanar la mayoria de items faltantes en el sprint 1.
 
 -Hacer mas: En este punto nos dimos cuenta que teníamos unos cambios ligeros entre vistas, decidimos generar una sola y de ella pasar estilos para las demás, plasmar en trello.
@@ -24,9 +28,11 @@ Sprint 2
 -Continuar haciendo: Mejorando el sitio web.
 
 -Hacer menos: El no esperar a los cambios realizados por los demas.
-#################################################################
+
+
 Sprint 3
-#################################################################
+
+
 -Comenzar hacer: Generar vistas parciales con EJS en partes comunes de cada una de las vistas en la pagina web y subsanar la mayoria de items faltantes en el sprint 2.
 
 -Hacer mas: Continuar generando mejoras en la pagina, plasmar en trello
