@@ -33,10 +33,10 @@ Sprint 2
 Sprint 3
 
 
--Comenzar hacer: Generar vistas parciales con EJS en partes comunes de cada una de las vistas en la pagina web y subsanar la mayoria de items faltantes en el sprint 2.
+-Comenzar hacer: Generar vistas parciales con EJS en partes comunes de cada una de las vistas en la pagina web y subsanar la mayoria de items faltantes en el sprint 2, formularios de carga y edición de producto .
 
 -Hacer mas: Continuar generando mejoras en la pagina, plasmar en trello
 
--Continuar haciendo: Nuevas vistas de formulario.
+-Continuar haciendo: Mejorando vistas de formulario.
 
 -Hacer menos: Tardar mas tiempo en los cambios en git, para ser cargados por los demás.
