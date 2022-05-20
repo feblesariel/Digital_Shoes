@@ -1,22 +1,32 @@
-const express = require('express');
+// ************ Require's ************
 
+const express = require('express');
 const path = require('path');
+const methodOverride = require('method-override'); // Pasar poder usar los métodos PUT y DELETE
+
+// ************ express() - (don't touch) ************
 
 const app = express();
 
-const mainRouter= require ("./routes/mainRouter");
+// ************ Middlewares - (don't touch) ************
 
 const publicPath = path.resolve(__dirname, './public');
+app.use(express.static(publicPath));  // Necesario para los archivos estáticos en el folder /public
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(methodOverride('_method'));  // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 
-app.use(express.static(publicPath));
+// ************ Template Engine - (don't touch) ************
 
-app.set ("view engine", "ejs");
+app.set("view engine", "ejs");
+app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la carpeta de las Vistas
 
+// ************ Route System require and use() ************
+
+const mainRouter = require("./routes/mainRouter");
 app.use('/', mainRouter);
 
-app.use(express.urlencoded({ extended: false }));
-
-app.use(express.json());
+// ************ Run server ************
 
 app.listen(3000, () => {
     console.log('Server running in 3000 port');
