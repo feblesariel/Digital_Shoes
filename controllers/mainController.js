@@ -51,6 +51,10 @@ const mainController = {
         res.render("adicionar");
     },
     
+    editar: function (req, res) {
+        res.render("editar");
+    },
+    
     nuevoUsuario: function (req, res) {
 
         let newUser  = {            
