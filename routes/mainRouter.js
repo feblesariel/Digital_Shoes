@@ -28,7 +28,7 @@ router.get ("/product", mainController.product);
 router.get ("/register/", mainController.register);
 router.post("/register/", mainController.nuevoUsuario);
 
-router.post("/adicionar/", mainController.nuevoProducto);
+router.post("/adicionar/", mainController.adicionar);
 
 router.get ("/login", mainController.login);
 
