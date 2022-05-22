@@ -47,6 +47,10 @@ const mainController = {
         res.render("register");
     },
 
+    adicionar: function (req, res) {
+        res.render("adicionar");
+    },
+    
     nuevoUsuario: function (req, res) {
 
         let newUser  = {            
