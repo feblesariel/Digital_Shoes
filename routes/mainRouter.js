@@ -30,6 +30,8 @@ router.post("/register/", mainController.nuevoUsuario);
 
 router.post("/adicionar/", mainController.adicionar);
 
+router.post("/editar/", mainController.editar);
+
 router.get ("/login", mainController.login);
 
 router.get ("/carrito", mainController.carrito);
