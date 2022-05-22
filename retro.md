@@ -39,4 +39,6 @@ Sprint 3
 
 -Continuar haciendo: Mejorando vistas de formulario.
 
+-Adicionar vinculos y adicionels de desarrollo como formularios que permita cargar y editar un producto.
+
 -Hacer menos: Tardar mas tiempo en los cambios en git, para ser cargados por los demás.
