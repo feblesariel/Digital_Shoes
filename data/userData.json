@@ -1,9 +1,16 @@
 [
     {
-        "usuario": "fmain0",
-        "password": "SBCeXZRWC",
-        "address": "069 Stoughton Crossing",
-        "zipcode": 1565,
-        "email": "nhebditch0@free.fr"
+        "usuario": "Ariel",
+        "password": "123456",
+        "address": "Calle 1 458",
+        "zipcode": "6587",
+        "email": "ariel@dh.com"
+    },
+    {
+        "usuario": "Ariel",
+        "password": "123456",
+        "address": "Calle 2 5787",
+        "zipcode": "6587",
+        "email": "mail@gmail.com"
     }
 ]

@@ -5,6 +5,8 @@ const multer = require ("multer");
 const path = require ("path");
 const {body} = require ("express-validator");
 
+// ************ Multer Config ************
+
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         let nombreCarpeta = path.join(__dirname, "../public/images");
@@ -22,6 +24,7 @@ const updateFile = multer({ storage });
 const validationsRegisterForm = [
 	body("name").notEmpty().withMessage("Debes ingresar un nombre de usuario."),
     body("pass").isLength({min: 6}).withMessage("La contraseña debe tener un minimo 6 caracteres."),
+    //body("repass").equals("pass").withMessage("La confirmacion de contraseña no coincide."),
 	body("domicilio").notEmpty().withMessage("Debes ingresar su domicilio."),
     body("zipcode").notEmpty().withMessage("Debes ingresar su codigo postal."),
 	body("email").isEmail().withMessage("Debes ingresar tu correo."),

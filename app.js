@@ -12,7 +12,7 @@ const app = express();
 
 const publicPath = path.resolve(__dirname, './public');
 app.use(express.static(publicPath));  // Necesario para los archivos estáticos en el folder /public
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false }));  // Captura la informacion enviada por POST
 app.use(express.json());
 app.use(methodOverride('_method'));  // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 
