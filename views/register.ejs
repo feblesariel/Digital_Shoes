@@ -8,7 +8,7 @@
             <main>
                 <br>
                 <div class="contenedor-general">
-                    <h2 class="titulares">Registrarme</h2>
+                    <h2 class="titulares">Registro de usuario</h2>
                     <div class="contenedor-register">                        
 
                         <form action="/register" method="post">
@@ -50,14 +50,12 @@
                             </div>
                             <br>
                             <div class="register-individual">
-                                <button type="submit" class="botones">Enviar</button>
-                                <button type="reset" class="botones">Cancelar</button>
+                                <button type="submit" class="botones">Registrarme</button>
                             </div>
-
                             <% if (locals.errors) { errors.forEach (error=> { %>
                                 <p class="errorMessageRegister">*<%= error.msg %>
                                 </p>
-                                <% })} %>
+                                <% })} %>                           
 
                         </form>
                     </div>
