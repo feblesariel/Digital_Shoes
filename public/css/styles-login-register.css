@@ -157,6 +157,10 @@ input[type="checkbox"] {
 /* PAGINA DE REGISTO - LOGIN */
 
 
+.errorMessageRegister{
+    color: red;
+}
+
 .contenedor-general{
     display: flex;
     flex-direction: column;

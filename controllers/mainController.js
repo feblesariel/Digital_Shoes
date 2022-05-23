@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { validationResult } = require("express-validator");
 
 const usersFilePath = path.join(__dirname, "../data/userData.json");
 const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
@@ -50,26 +51,30 @@ const mainController = {
     adicionar: function (req, res) {
         res.render("adicionar");
     },
-    
+
     editar: function (req, res) {
         res.render("editar");
     },
-    
+
     nuevoUsuario: function (req, res) {
+        let errors = validationResult(req);
 
-        let newUser  = {            
-            usuario: req.body.name,
-            password: req.body.pass,
-            address: req.body.domicilio,
-            zipcode: req.body.zipcode,
-            email: req.body.email
+        if (!errors.isEmpty()) {
+            return res.render("register", { errors: errors.array(), old: req.body })
+        } else {
+            let newUser = {
+                usuario: req.body.name,
+                password: req.body.pass,
+                address: req.body.domicilio,
+                zipcode: req.body.zipcode,
+                email: req.body.email
+            }
+            users.push(newUser);
+            let usersJSON = JSON.stringify(users);
+            fs.writeFileSync(usersFilePath, usersJSON);
+
+            res.redirect("/")
         }
-
-        users.push(newUser);
-        let usersJSON = JSON.stringify(users);
-        fs.writeFileSync(usersFilePath, usersJSON);
-
-        res.redirect("/")
     },
 
     login: function (req, res) {

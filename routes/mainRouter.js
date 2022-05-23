@@ -3,6 +3,7 @@ const express = require ("express");
 const router = express.Router();
 const multer = require ("multer");
 const path = require ("path");
+const {body} = require ("express-validator");
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -17,6 +18,15 @@ const storage = multer.diskStorage({
 
 const updateFile = multer({ storage });
 
+// ************ Validations ************
+const validationsRegisterForm = [
+	body("name").notEmpty().withMessage("Debes ingresar el nombre."),
+    body("pass").isLength({min: 6}).withMessage("Contraseña minimo 6 caracteres."),
+	body("domicilio").notEmpty().withMessage("Debes ingresar un domicilio."),
+    body("zipcode").notEmpty().withMessage("Debes ingresar el codigo postal."),
+	body("email").isEmail().withMessage("Debes ingresar tu correo."),
+];
+
 // ************ Controller Require ************
 const mainController = require ("../controllers/mainController")
 
@@ -26,7 +36,7 @@ router.get ("/product", mainController.product);
 
 
 router.get ("/register/", mainController.register);
-router.post("/register/", mainController.nuevoUsuario);
+router.post("/register/", validationsRegisterForm ,mainController.nuevoUsuario);
 
 router.post("/adicionar/", mainController.adicionar);
 
