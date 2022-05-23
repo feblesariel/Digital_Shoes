@@ -1,47 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!--
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Shoes - Ardidas</title>
-    <link rel="stylesheet" href="./css/styles_home.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
-</head>
--->
-
 <%-include("./partials/head.ejs")%>
 
+    <body>
 
-<body>
-      <%-include("./partials/header.ejs")%>
-    <div class="header">
-        <div class="title-header">
-            <h2>MIRÁ UN ADELANTO<br><span>&nbsp;&nbsp;&nbsp;&nbsp; DE LA NUEVA COLECCIÓN</span></h2>
-        </div>
+        <%-include("./partials/header.ejs")%>
+
+            <div class="header">
+                <div class="title-header">
+                    <h2>MIRÁ UN ADELANTO<br><span>&nbsp;&nbsp;&nbsp;&nbsp; DE LA NUEVA COLECCIÓN</span></h2>
+                </div>
+            </div>
+
+            <!-- Sneakers -->
+            <div class="title-card">
+                <h2>Sneakers</h2>
+            </div>
+
+            <% products.forEach((product)=> { %>
+                <div class="container">
+                    <div class="product prod-desk">
+                        <div class="product-card">
+
+                            <h2 class="name">
+                                <%= product.nombre %>
+                            </h2>
+
+                            <span class="price">
+                                $<%= product.precio %>
+                            </span>
+
+                            <a class="popup-btn" href="/carrito">Comprar</a>
+                            <a class="popup-btn" href="/editar">Editar</a>
+                            <a class="popup-btn">Eliminar</a>
+                            <img class="product-img" src="/images/<%= product.imagen %>" alt="">
+                            
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
 
 
-    <!-- Sneakers -->
-    <div class="title-card">
-        <h2>Sneakers</h2>
-    </div>
-    <%-include("./partials/tarjeta.ejs")%>
+                    <!-- FOOTER -->
+                    <%-include("./partials/footer.ejs")%>
+                        <!-- FIN FOOTER -->
 
-
-    <!-- FOOTER -->
-    <%-include("./partials/footer.ejs")%>
-
-    <!-- FIN FOOTER -->
-
-
-
-
-
-</body>
+    </body>
 
 </html>

@@ -3,81 +3,75 @@
 
 <%-include("./partials/head.ejs")%>
 
-<body>
-     <%-include("./partials/header.ejs")%>
+    <body>
+        <%-include("./partials/header.ejs")%>
 
-    <main>
-
-
-
-        <br>
-        <div class="contenedor-carrito">
-            <br>
-            <div class="titulo">
-                <h2>Carrito de compras</h2>
-            </div>
-            <br>
-            <div class="subtitulos">
-                <p>Productos</p>
-                <p>Cantidad</style>
-                </p>
-            </div>
-            <br>
-            <div class="contenedor-prod-cant">
-                <div class="contenedor-producto">
-                    <img src="./images/zapatillas-nike-air-max_ccexpress.png" class="imagen" alt="">
-                    <div class="nombre">Air Max</div>
-                    <div class="precio">$1600.00</div>
-                </div>
-                <div class="cant">
-                    <form action="" method="GET" class="cant">
-                        <select name="cantidad">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                        </select>
-                    </form>
-                </div>
-            </div>
-            <br>
-            <div class="descripciones">
+            <main>
                 <br>
-                <div class="descripciones-izquierda">
+                <div class="contenedor-carrito">
+                    <br>
+                    <div class="titulo">
+                        <h2>Carrito de compras</h2>
+                    </div>
+                    <br>
+                    <div class="subtitulos">
+                        <p>Productos</p>
+                        <p>Cantidad</style>
+                        </p>
+                    </div>
+                    <br>
+                    <div class="contenedor-prod-cant">
+                        <div class="contenedor-producto">
+                            <img src="./images/zapatillas-nike-air-max_ccexpress.png" class="imagen" alt="">
+                            <div class="nombre">Air Max</div>
+                            <div class="precio">$1600.00</div>
+                        </div>
+                        <div class="cant">
+                            <form action="" method="GET" class="cant">
+                                <select name="cantidad">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="descripciones">
+                        <br>
+                        <div class="descripciones-izquierda">
+                            <div>
+                                <p>Envio CABA y GBA ($700)</p>
+                                <p>Retira en nuestra tienda (Sin costo)</p>
+                            </div>
+                            <div class="radios">
+                                <input type="radio" name="medio-de-pago" value="Efectivo">
+                                <input type="radio" name="medio-de-pago" value="Débito">
+                            </div>
+                        </div>
+                        <br>
+                        <p class="total">SUBTOTAL</p>
+                        <p class="total">$1.600,00-</p>
+                        <p class="total">$700,00-</p>
+                        <br>
+                        <p class="total">TOTAL</p>
+                        <div class="descripciones-derecha">
+                            <p class="total">$2.300,00-</p>
+                        </div>
+                    </div>
                     <div>
-                        <p>Envio CABA y GBA ($700)</p>
-                        <p>Retira en nuestra tienda (Sin costo)</p>
+                        <br>
+                        <br>
+                        <div class="contenedor-botones">
+                            <a href="/"><button type="submit" class="button">Confirmar</button></a>
+                            <a href="/"><button type="reset" class="button">Seguir comprando</button></a>
+                        </div>
                     </div>
-                    <div class="radios">
-                        <input type="radio" name="medio-de-pago" value="Efectivo">
-                        <input type="radio" name="medio-de-pago" value="Débito">
-                    </div>
                 </div>
-                <br>
-                <p class="total">SUBTOTAL</p>
-                <p class="total">$1.600,00-</p>
-                <p class="total">$700,00-</p>
-                <br>
-                <p class="total">TOTAL</p>
-                <div class="descripciones-derecha">
-                    <p class="total">$2.300,00-</p>
-                </div>
-            </div>
-            <div>
-                <br>
-                <br>
-                <div class="contenedor-botones">
-                    <a href="/"><button type="submit" class="button">Confirmar</button></a>
-                    <a href="/"><button type="reset" class="button">Seguir comprando</button></a>
-                </div>
-            </div>
-        </div>
 
+            </main>
 
-
-
-    </main>
-
-    <%-include("./partials/footer.ejs")%>
-</body>
+            <%-include("./partials/footer.ejs")%>
+    </body>
 
 </html>
