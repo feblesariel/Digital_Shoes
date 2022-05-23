@@ -1,4 +1,5 @@
 // ************ Require's ************
+
 const express = require ("express");
 const router = express.Router();
 const multer = require ("multer");
@@ -21,6 +22,7 @@ const storage = multer.diskStorage({
 const updateFile = multer({ storage });
 
 // ************ Validations ************
+
 const validationsRegisterForm = [
 	body("name").notEmpty().withMessage("Debes ingresar un nombre de usuario."),
     body("pass").isLength({min: 6}).withMessage("La contraseña debe tener un minimo 6 caracteres."),
@@ -31,12 +33,12 @@ const validationsRegisterForm = [
 ];
 
 // ************ Controller Require ************
+
 const mainController = require ("../controllers/mainController")
 
 router.get ("/", mainController.home);
 
 router.get ("/product", mainController.product);
-
 
 router.get ("/register/", mainController.register);
 router.post("/register/", validationsRegisterForm ,mainController.nuevoUsuario);

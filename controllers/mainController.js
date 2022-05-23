@@ -1,9 +1,17 @@
+// ************ Requires ************
+
 const fs = require("fs");
 const path = require("path");
 const { validationResult } = require("express-validator");
 
+
+// ************ Archivo de usuarios ************
+
 const usersFilePath = path.join(__dirname, "../data/userData.json");
 const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+
+
+// ************ Controllers ************
 
 
 const mainController = {
@@ -48,15 +56,8 @@ const mainController = {
         res.render("register");
     },
 
-    adicionar: function (req, res) {
-        res.render("adicionar");
-    },
-
-    editar: function (req, res) {
-        res.render("editar");
-    },
-
     nuevoUsuario: function (req, res) {
+
         let errors = validationResult(req);
 
         if (!errors.isEmpty()) {
@@ -76,6 +77,15 @@ const mainController = {
             res.redirect("/")
         }
     },
+
+    adicionar: function (req, res) {
+        res.render("adicionar");
+    },
+
+    editar: function (req, res) {
+        res.render("editar");
+    },
+
 
     login: function (req, res) {
         res.render("login");
