@@ -20,10 +20,10 @@ const updateFile = multer({ storage });
 
 // ************ Validations ************
 const validationsRegisterForm = [
-	body("name").notEmpty().withMessage("Debes ingresar el nombre."),
-    body("pass").isLength({min: 6}).withMessage("Contraseña minimo 6 caracteres."),
-	body("domicilio").notEmpty().withMessage("Debes ingresar un domicilio."),
-    body("zipcode").notEmpty().withMessage("Debes ingresar el codigo postal."),
+	body("name").notEmpty().withMessage("Debes ingresar un nombre de usuario."),
+    body("pass").isLength({min: 6}).withMessage("La contraseña debe tener un minimo 6 caracteres."),
+	body("domicilio").notEmpty().withMessage("Debes ingresar su domicilio."),
+    body("zipcode").notEmpty().withMessage("Debes ingresar su codigo postal."),
 	body("email").isEmail().withMessage("Debes ingresar tu correo."),
 ];
 
