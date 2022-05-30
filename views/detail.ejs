@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include("./partials/head.ejs")%>
+
+    <body>
+
+        <%-include("./partials/header.ejs")%>
+
+        <div class="header">
+            <div class="title-header">
+                <h2>MIRÁ UN ADELANTO<br><span>&nbsp;&nbsp;&nbsp;&nbsp; DE LA NUEVA COLECCIÓN</span></h2>
+            </div>
+        </div>
+
+            <div class="container">
+                <div class="product prod-desk">
+                    <div class="product-card-DETAIL">
+                        <h2 class="name-DETAIL">
+                            <%=productoSeleccionado.nombre%>
+                        </h2>
+                        <div class="price-DETAIL">$<%=productoSeleccionado.precio%></div>       
+                        <div class="descripcion-DETAIL"><%=productoSeleccionado.descripcion%></div>             
+                        <img class="product-img-DETAIL" src="/images/<%=productoSeleccionado.imagen%>" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <!-- FOOTER -->
+            <%-include("./partials/footer.ejs")%>
+                <!-- FIN FOOTER -->
+
+    </body>
+
+</html>

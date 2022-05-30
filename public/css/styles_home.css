@@ -185,18 +185,17 @@ input[type="checkbox"]{
   font-weight: 800;
 }
 
-.product .product-card{
+.product-card-DETAIL{
   z-index: 1;
   background: rgb(169, 170, 170);
   position: relative;
-  width: 300px;
-  height: 400px;
+  width: 50vw;
+  height: 50vh;
   margin: 40px;
   border-radius: 10px;
 }
 
-
-.product .product-card .product-img{
+.product-img-DETAIL{
   z-index: 1;
   position: absolute;
   max-width: 350px;
@@ -205,16 +204,69 @@ input[type="checkbox"]{
   transform: translate(-50%, -50%);
 }
 
-.product .product-card .name{
+.product .product-card{
+  z-index: 1;
+  background: rgb(169, 170, 170);
+  position: relative;
+  width: 30vw;
+  height: 65vh;
+  margin: 40px;
+  border-radius: 10px;
+}
+
+
+.product .product-card .product-img{
+  z-index: 1;
+  position: absolute;
+  max-width: 400px;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.name-DETAIL {
   z-index: 2;
-  color: #fff;
+  color: black;
   position: absolute;
   width: 100%;
   text-align: center;
   bottom: 130px;
-  font-size: 20px;
+  font-size: 40px;
   letter-spacing: 1px;
 }
+
+.descripcion-DETAIL {
+  z-index: 2;
+  color: black;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 30px;
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+.product .product-card .name{
+  z-index: 2;
+  color: black;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 130px;
+  font-size: 40px;
+  letter-spacing: 1px;
+}
+
+.price-DETAIL {
+    z-index: 2;
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 80px;
+    font-size: 30px;
+    font-weight: 300;
+  }
 
 .product .product-card .price{
   z-index: 2;

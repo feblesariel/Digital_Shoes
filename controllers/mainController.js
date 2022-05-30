@@ -18,15 +18,10 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
 // ************ Controllers ************
 
-
 const mainController = {
 
     home: function (req, res) {
         res.render("home", { products: products });
-    },
-
-    product: function (req, res) {
-        res.render("product");
     },
 
     register: function (req, res) {
@@ -55,15 +50,6 @@ const mainController = {
         }
     },
 
-    adicionar: function (req, res) {
-        res.render("adicionar");
-    },
-
-    editar: function (req, res) {
-        res.render("editar");
-    },
-
-
     login: function (req, res) {
         res.render("login");
     },
@@ -71,6 +57,6 @@ const mainController = {
     carrito: function (req, res) {
         res.render("carrito");
     }
-}
 
+}
 module.exports = mainController;

@@ -1,27 +1,37 @@
 [
     {
+        "id": 1,
         "nombre": "Air Jordan",
         "precio": "1850.00",
-        "imagen": "zapatillas-Air-Jordan.png"
+        "imagen": "zapatillas-Air-Jordan.png",
+        "descripcion": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim qui cupiditate autem beatae velit optio at voluptates, et architecto ipsam quae non aliquam nam fugiat vitae quidem facere laboriosam officiis."
     },
     {
+        "id": 2,
         "nombre": "Air Max",
         "precio": "1600.00",
-        "imagen": "zapatillas-nike-air-max_ccexpress.png"
+        "imagen": "zapatillas-nike-air-max_ccexpress.png",
+        "descripcion": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim qui cupiditate autem beatae velit optio at voluptates, et architecto ipsam quae non aliquam nam fugiat vitae quidem facere laboriosam officiis."
     },
     {
+        "id": 3,
         "nombre": "Nike Blue",
         "precio": "2050.00",
-        "imagen": "zapatillas-nike-azul.png"
+        "imagen": "zapatillas-nike-azul.png",
+        "descripcion": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim qui cupiditate autem beatae velit optio at voluptates, et architecto ipsam quae non aliquam nam fugiat vitae quidem facere laboriosam officiis."
     },
     {
+        "id": 4,
         "nombre": "Flywire",
         "precio": "2250.00",
-        "imagen": "zapatillas-nike-flywire.png"
+        "imagen": "zapatillas-nike-flywire.png",
+        "descripcion": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim qui cupiditate autem beatae velit optio at voluptates, et architecto ipsam quae non aliquam nam fugiat vitae quidem facere laboriosam officiis."
     },
     {
-        "nombre": "Zapatillas",
+        "id": 5,
+        "nombre": "Nike Tornado",
         "precio": "2000.00",
-        "imagen": "zapatillas.png"
+        "imagen": "zapatillas.png",
+        "descripcion": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim qui cupiditate autem beatae velit optio at voluptates, et architecto ipsam quae non aliquam nam fugiat vitae quidem facere laboriosam officiis."
     }
 ]

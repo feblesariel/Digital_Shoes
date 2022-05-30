@@ -1,10 +1,10 @@
 // ************ Require's ************
 
-const express = require ("express");
+const express = require("express");
 const router = express.Router();
-const multer = require ("multer");
-const path = require ("path");
-const {body} = require ("express-validator");
+const multer = require("multer");
+const path = require("path");
+const { body } = require("express-validator");
 
 // ************ Multer Config ************
 
@@ -24,32 +24,32 @@ const updateFile = multer({ storage });
 // ************ Validations ************
 
 const validationsRegisterForm = [
-	body("name").notEmpty().withMessage("Debes ingresar un nombre de usuario."),
-    body("pass").isLength({min: 6}).withMessage("La contraseña debe tener un minimo 6 caracteres."),
+    body("name").notEmpty().withMessage("Debes ingresar un nombre de usuario."),
+    body("pass").isLength({ min: 6 }).withMessage("La contraseña debe tener un minimo 6 caracteres."),
     //body("repass").equals("pass").withMessage("La confirmacion de contraseña no coincide."),
-	body("domicilio").notEmpty().withMessage("Debes ingresar su domicilio."),
+    body("domicilio").notEmpty().withMessage("Debes ingresar su domicilio."),
     body("zipcode").notEmpty().withMessage("Debes ingresar su codigo postal."),
-	body("email").isEmail().withMessage("Debes ingresar tu correo."),
+    body("email").isEmail().withMessage("Debes ingresar tu correo."),
 ];
+
 
 // ************ Controller Require ************
 
-const mainController = require ("../controllers/mainController")
+const mainController = require("../controllers/mainController")
 
-router.get ("/", mainController.home);
 
-router.get ("/product", mainController.product);
+// ************ Rutas ************
 
-router.get ("/register/", mainController.register);
-router.post("/register/", validationsRegisterForm ,mainController.nuevoUsuario);
+router.get("/", mainController.home);
 
-router.post("/adicionar/", mainController.adicionar);
 
-router.post("/editar/", mainController.editar);
+router.get("/register/", mainController.register);
+router.post("/register/", validationsRegisterForm, mainController.nuevoUsuario);
 
-router.get ("/login", mainController.login);
 
-router.get ("/carrito", mainController.carrito);
+router.get("/login", mainController.login);
+
+router.get("/carrito", mainController.carrito);
 
 
 module.exports = router;

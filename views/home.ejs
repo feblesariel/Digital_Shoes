@@ -15,31 +15,44 @@
 
             <!-- Sneakers -->
             <div class="title-card">
-                <h2>Sneakers</h2>
+                <h2>DESTACADOS</h2>
             </div>
 
-            <% products.forEach((product)=> { %>
+            <% for (let i= 0 ; i < 1; i++ ) { %>
                 <div class="container">
                     <div class="product prod-desk">
                         <div class="product-card">
 
                             <h2 class="name">
-                                <%= product.nombre %>
+                                <%= products[i].nombre %>
                             </h2>
-
-                            <span class="price">
-                                $<%= product.precio %>
-                            </span>
-
-                            <a class="popup-btn" href="/carrito">Comprar</a>
-                            <a class="popup-btn" href="/editar">Editar</a>
-                            <a class="popup-btn">Eliminar</a>
-                            <img class="product-img" src="/images/<%= product.imagen %>" alt="">
-                            
+                            <a href="/products/<%=products[i].id%>" class="popup-btn">Detalle</a>
+                            <img class="product-img" src="/images/<%= products[i].imagen %>" alt="">                            
                         </div>
                     </div>
                 </div>
-                <% }) %>
+                <% } %>
+
+                <div class="title-card">
+                    <h2>OFERTAS</h2>
+                </div>
+                
+                <% for (let i= 2 ; i < 3; i++ ) { %>
+                    <div class="container">
+                        <div class="product prod-desk">
+                            <div class="product-card">
+    
+                                <a href="/products/<%=products[i].id%>" class="popup-btn">Detalle</a>
+                                <img class="product-img" src="/images/<%= products[i].imagen %>" alt=""> 
+
+                                <h2 class="name">
+                                    <%= products[i].nombre %>
+                                </h2>     
+                                 
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
 
 
                     <!-- FOOTER -->
