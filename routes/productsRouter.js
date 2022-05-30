@@ -21,6 +21,13 @@ const storage = multer.diskStorage({
 
 const updateFile = multer({ storage });
 
+// ************ Validations ************
+
+const validationsEditForm = [
+    body("nombre").notEmpty().withMessage("Debes ingresar un nombre de producto."),
+    body("precio").notEmpty().bail().withMessage("Debes ingresar un precio."),
+    body("descripcion").notEmpty().withMessage("Debes ingresar una descripcion."),
+];
 
 // ************ Controller Require ************
 
@@ -32,6 +39,10 @@ const productsController = require ("../controllers/productsController")
 router.get("/", productsController.products);
 
 router.get("/:id/", productsController.detail);
+
+router.get("/edit/:id/", productsController.edit);
+
+router.put("/edit/:id/", updateFile.single("product-image") , validationsEditForm ,productsController.update);
 
 
 

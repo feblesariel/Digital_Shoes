@@ -153,6 +153,27 @@ input[type="checkbox"] {
     font-size: 70px;
 }
 
+/* DETAIL */
+
+.contenedor-DETAIL {
+    text-align: center;
+}
+
+.botones-DETAIL {
+    text-decoration: none;
+    background-color: #e02f2f;
+    color: white;
+    border: none;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.botones-DETAIL:hover {
+    background-color: #a81111;
+    transition: 450ms;
+}
+
 
 /* PAGINA DE REGISTO - LOGIN */
 

@@ -34,6 +34,45 @@ const productsController = {
             }
         }
         res.render("detail", { productoSeleccionado: productoSeleccionado });
+    },
+
+    edit: function (req, res) {
+        let idParams = req.params.id;
+        let productToEdit = 0;
+        let old = 0;
+
+        for (let i = 0; i < products.length; i++) {
+            if (products[i].id == idParams) {
+                productToEdit = products[i];
+                old = products[i];
+            }
+        }
+
+        res.render("product-edit-form", { productToEdit: productToEdit, old: old });
+    },
+
+    update: function (req, res) {
+        let errors = validationResult(req);
+        let idParams = req.params.id;
+
+        if (!errors.isEmpty()) {
+            return res.render("product-edit-form", { errors: errors.array(), old: req.body })
+        } else {
+            let defaultImage = "default-image.png";
+            let productoActualizado = {
+                id: req.params.id,
+                nombre: req.body.nombre,
+                precio: req.body.precio,
+                descripcion: req.body.descripcion,
+                imagen: req.file ? req.file.filename : defaultImage
+            }
+            let nuevoArray = products.filter(product => product.id != idParams);
+            nuevoArray.push(productoActualizado);
+            let productJSON = JSON.stringify(nuevoArray);
+            fs.writeFileSync(productsFilePath, productJSON);
+            res.redirect("/products/" + idParams);
+        }
+
     }
 }
 
