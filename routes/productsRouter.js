@@ -44,6 +44,8 @@ router.get("/edit/:id/", productsController.edit);
 
 router.put("/edit/:id/", updateFile.single("product-image") , validationsEditForm ,productsController.update);
 
+router.delete("/:id/",productsController.destroy);
+
 
 
 module.exports = router;

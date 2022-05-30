@@ -72,7 +72,14 @@ const productsController = {
             fs.writeFileSync(productsFilePath, productJSON);
             res.redirect("/products/" + idParams);
         }
+    },
 
+    destroy: function (req, res) {
+        let idParams = req.params.id;
+        let nuevoArray = products.filter(product => product.id != idParams);
+        let productJSON = JSON.stringify(nuevoArray);
+        fs.writeFileSync(productsFilePath, productJSON);
+        res.redirect("/products");
     }
 }
 
