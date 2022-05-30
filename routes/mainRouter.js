@@ -32,6 +32,11 @@ const validationsRegisterForm = [
     body("email").isEmail().withMessage("Debes ingresar tu correo."),
 ];
 
+const validationsCreateForm = [
+    body("nombre").notEmpty().withMessage("Debes ingresar un nombre de producto."),
+    body("precio").notEmpty().bail().withMessage("Debes ingresar un precio.").isInt().withMessage("Debes ingresar un numero."),
+    body("descripcion").notEmpty().withMessage("Debes ingresar una descripcion."),
+];
 
 // ************ Controller Require ************
 
@@ -42,6 +47,8 @@ const mainController = require("../controllers/mainController")
 
 router.get("/", mainController.home);
 
+router.get("/create/", mainController.create);
+router.post("/", updateFile.single("product-image"), validationsCreateForm ,mainController.store);
 
 router.get("/register/", mainController.register);
 router.post("/register/", validationsRegisterForm, mainController.nuevoUsuario);

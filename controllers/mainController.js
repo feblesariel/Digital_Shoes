@@ -3,6 +3,7 @@
 const fs = require("fs");
 const path = require("path");
 const { validationResult } = require("express-validator");
+const { stringify } = require("querystring");
 
 
 // ************ Archivo de usuarios ************
@@ -22,6 +23,32 @@ const mainController = {
 
     home: function (req, res) {
         res.render("home", { products: products });
+    },
+
+    create: function (req, res) {
+        res.render("product-create-form");
+    },
+
+    store: function (req, res) {
+
+        let errors = validationResult (req);
+
+        if (!errors.isEmpty()) {
+            return res.render("product-create-form", { errors: errors.array(), old: req.body})
+        } else {
+            let defaultImage = "default-image.png";
+            let nuevoProducto = {
+                id: products.length + 1,
+                nombre: req.body.nombre,
+                precio: req.body.precio,
+                descripcion: req.body.descripcion,
+                imagen: req.file ? req.file.filename : defaultImage
+            }
+            products.push(nuevoProducto);
+            let productJSON = JSON.stringify(products);
+            fs.writeFileSync(productsFilePath, productJSON);
+            res.redirect("/products");
+        }
     },
 
     register: function (req, res) {

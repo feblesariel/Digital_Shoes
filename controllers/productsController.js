@@ -27,16 +27,14 @@ const productsController = {
     detail: function (req, res) {
 
         let idParams = req.params.id;
-        let productoSeleccionado = null;
+        let productoSeleccionado = 0;
         for (let i = 0; i < products.length; i++) {
             if (products[i].id == idParams) {
                 productoSeleccionado = products[i];
             }
         }
-        res.render("detail", { productoSeleccionado : productoSeleccionado });
-    },
-
-
+        res.render("detail", { productoSeleccionado: productoSeleccionado });
+    }
 }
 
 module.exports = productsController;
