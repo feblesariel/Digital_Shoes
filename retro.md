@@ -42,3 +42,18 @@ Sprint 3
 -Adicionar vinculos y adicionels de desarrollo como formularios que permita cargar y editar un producto.
 
 -Hacer menos: Tardar mas tiempo en los cambios en git, para ser cargados por los demás.
+
+
+Sprint 4
+
+
+-Comenzar hacer: Definir los campos necesarios para los usuarios y generar archivo JSON, Home: Agregar vinculo con Todos los productos y con la sección de Carga de Productos, Lista de Producto con detalle: Agregar botones de editar y eliminar.
+
+-Hacer mas: Continuar generando mejoras en la pagina, plasmar en trello.
+
+-Continuar haciendo: Mejorando vistas de formulario y css.
+
+-Adicionar funcionalidades de logeo, cambios y carga de datos json.
+
+-Hacer menos: Tardar mas tiempo en los cambios en git, para ser cargados por los demás.
+
