@@ -53,7 +53,7 @@ Sprint 4
 
 -Continuar haciendo: Mejorando vistas de formulario y css.
 
--Adicionar funcionalidades de logeo, cambios y carga de datos json.
+-Adicionar funcionalidades, cambios y carga de datos json, revisar el login.
 
 -Hacer menos: Tardar mas tiempo en los cambios en git, para ser cargados por los demás, dejar cosas para ultimo momento.
 
