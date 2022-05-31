@@ -59,3 +59,4 @@ Sprint 4
 
 -Inconvenientes: Laboral de cada integrante y responsabilidades adicionales.
 
+-Adicional: Intentar reagrupar todas las carpetas mejorando el archivo.
