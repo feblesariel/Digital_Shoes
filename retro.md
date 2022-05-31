@@ -55,5 +55,7 @@ Sprint 4
 
 -Adicionar funcionalidades de logeo, cambios y carga de datos json.
 
--Hacer menos: Tardar mas tiempo en los cambios en git, para ser cargados por los demás.
+-Hacer menos: Tardar mas tiempo en los cambios en git, para ser cargados por los demás, dejar cosas para ultimo momento.
+
+-Inconvenientes: Laboral de cada integrante y responsabilidades adicionales.
 
