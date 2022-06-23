@@ -39,7 +39,7 @@ Sprint 3
 
 -Continuar haciendo: Mejorando vistas de formulario.
 
--Adicionar vinculos y adicionels de desarrollo como formularios que permita cargar y editar un producto.
+-Adicionar vinculos y adicionales de desarrollo como formularios que permita cargar y editar un producto.
 
 -Hacer menos: Tardar mas tiempo en los cambios en git, para ser cargados por los demás.
 
@@ -60,3 +60,18 @@ Sprint 4
 -Inconvenientes: Laboral de cada integrante y responsabilidades adicionales.
 
 -Adicional: Intentar reagrupar todas las carpetas mejorando el archivo.
+
+
+Sprint 5
+
+
+-Comenzar hacer: Login funcional, y en formulario de Registro agregar avatar/imagen y encriptación de contraseña.
+
+-Hacer mas: Seguimiento en tablero trello.
+
+-Continuar haciendo: Funcionalidades y mejoras de estilos Css.
+
+-Hacer menos: Demorar mas tiempo de lo estipulado en las cargas de GIT.
+
+-Inconvenientes: Laborales de cada integrante y responsabilidades personales.
+
