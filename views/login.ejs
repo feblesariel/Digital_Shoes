@@ -3,34 +3,38 @@
 
 <%-include("./partials/head.ejs")%>
 
-<body>
-    <%-include("./partials/header.ejs")%>
-    <main>
-        <br>
-        <div class="contenedor-general">
-        <h2 class="titulares">Iniciar Sesión</h2>
-        <div class="contenedor-register">
-        <form action="/" method="get">
-            <div class="register-individual">
-                <label for="name"></label>
-                <input type="text" name="name" id="name" class="campos" placeholder="Nombre de usuario">
-            </div>
-            <div class="register-individual">
-                <label for="pass"></label>
-                <input type="password" name="pass" id="pass" class="campos" placeholder="Constraseña">
-            </div>
-            <br>
-            <div class="register-individual">
-                <button type="submit" class="botones">Continuar</button>
+    <body>
+        <%-include("./partials/header.ejs")%>
+            <main>
                 <br>
-                <br>
-                <a href="/register" style="color: grey;">¿Olvido su contraseña?</a>
-            </div>
-        </form>
-        </div>
-    </div>
-    </main>
-   <%-include("./partials/footer.ejs")%>
-</body>
+                <div class="contenedor-general">
+                    <h2 class="titulares">Iniciar Sesión</h2>
+                    <div class="contenedor-register">
+                        <form action="/login" method="post">
+                            <div class="register-individual">
+                                <label for="name"></label>
+                                <input type="text" name="name" id="name" class="campos" placeholder="Nombre de usuario">
+                            </div>
+                            <div class="register-individual">
+                                <label for="pass"></label>
+                                <input type="password" name="pass" id="pass" class="campos" placeholder="Constraseña">
+                            </div>                 
+                            <br>
+                            <div class="register-individual">
+                                <button type="submit" class="botones">Continuar</button>
+                                <br>
+                                <br>
+                                <a href="/register" style="color: grey;">¿Olvido su contraseña?</a>
+                            </div>
+                            <% if (locals.errors) { errors.forEach (error=> { %>
+                                <p class="errorMessageRegister">*<%= error.msg %>
+                                </p>
+                                <% })} %>  
+                        </form>
+                    </div>
+                </div>
+            </main>
+            <%-include("./partials/footer.ejs")%>
+    </body>
 
 </html>

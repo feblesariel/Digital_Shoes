@@ -4,6 +4,7 @@ const fs = require("fs");
 const path = require("path");
 const { validationResult } = require("express-validator");
 const { stringify } = require("querystring");
+const bcrypt = require('bcryptjs');
 
 
 // ************ Archivo de usuarios ************
@@ -36,7 +37,7 @@ const mainController = {
         if (!errors.isEmpty()) {
             return res.render("product-create-form", { errors: errors.array(), old: req.body})
         } else {
-            let defaultImage = "default-image.png";
+            let defaultImage = "default-image.png";            
             let nuevoProducto = {
                 id: products.length + 1,
                 nombre: req.body.nombre,
@@ -62,9 +63,10 @@ const mainController = {
         if (!errors.isEmpty()) {
             return res.render("register", { errors: errors.array(), old: req.body })
         } else {
+            let passEncriptada = bcrypt.hashSync(req.body.pass , 10 );
             let newUser = {
                 usuario: req.body.name,
-                password: req.body.pass,
+                password: passEncriptada,
                 address: req.body.domicilio,
                 zipcode: req.body.zipcode,
                 email: req.body.email
@@ -81,9 +83,21 @@ const mainController = {
         res.render("login");
     },
 
+    proccesLogin: function (req, res) {
+        let errors = validationResult(req);
+
+        if (!errors.isEmpty()) {
+            return res.render("login", { errors: errors.array(), old: req.body })
+        } else {
+            res.send("ESTAMOS TRABAJANDO");
+        }
+    },
+
     carrito: function (req, res) {
         res.render("carrito");
     }
 
 }
+
+
 module.exports = mainController;
