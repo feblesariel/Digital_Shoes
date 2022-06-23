@@ -10,7 +10,11 @@
                 <div class="contenedor-general">
                     <h2 class="titulares">Iniciar Sesión</h2>
                     <div class="contenedor-register">
+<<<<<<< HEAD
                         <form action="/" method="get">
+=======
+                        <form action="/login" method="post">
+>>>>>>> 06249296074a4e685602cfa50524f78e9faa02f5
                             <div class="register-individual">
                                 <label for="name"></label>
                                 <input type="text" name="name" id="name" class="campos" placeholder="Nombre de usuario">
@@ -18,10 +22,14 @@
                             <div class="register-individual">
                                 <label for="pass"></label>
                                 <input type="password" name="pass" id="pass" class="campos" placeholder="Constraseña">
+<<<<<<< HEAD
                             </div>
                             <br>
                             <input type="checkbox" name="recuerdame" value="recuerdame"> Recuerdame
                             <br>
+=======
+                            </div>                 
+>>>>>>> 06249296074a4e685602cfa50524f78e9faa02f5
                             <br>
                             <div class="register-individual">
                                 <button type="submit" class="botones">Continuar</button>
@@ -29,6 +37,13 @@
                                 <br>
                                 <a href="/register" style="color: grey;">¿Olvido su contraseña?</a>
                             </div>
+<<<<<<< HEAD
+=======
+                            <% if (locals.errors) { errors.forEach (error=> { %>
+                                <p class="errorMessageRegister">*<%= error.msg %>
+                                </p>
+                                <% })} %>  
+>>>>>>> 06249296074a4e685602cfa50524f78e9faa02f5
                         </form>
                     </div>
                 </div>

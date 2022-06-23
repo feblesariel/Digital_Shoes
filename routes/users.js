@@ -22,4 +22,7 @@ router.get('/logout',usersController.logout);
 
 router.delete('/delete/:id',usersController.delete);
 
+
+
+
 module.exports = router;

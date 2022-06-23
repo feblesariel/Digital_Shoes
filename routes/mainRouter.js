@@ -26,7 +26,6 @@ const updateFile = multer({ storage });
 const validationsRegisterForm = [
     body("name").notEmpty().withMessage("Debes ingresar un nombre de usuario."),
     body("pass").isLength({ min: 6 }).withMessage("La contraseña debe tener un minimo 6 caracteres."),
-    //body("repass").equals("pass").withMessage("La confirmacion de contraseña no coincide."),
     body("domicilio").notEmpty().withMessage("Debes ingresar su domicilio."),
     body("zipcode").notEmpty().withMessage("Debes ingresar su codigo postal."),
     body("email").isEmail().withMessage("Debes ingresar tu correo."),
@@ -36,6 +35,11 @@ const validationsCreateForm = [
     body("nombre").notEmpty().withMessage("Debes ingresar un nombre de producto."),
     body("precio").notEmpty().bail().withMessage("Debes ingresar un precio.").isInt().withMessage("Debes ingresar un numero."),
     body("descripcion").notEmpty().withMessage("Debes ingresar una descripcion."),
+];
+
+const validationsLoginForm = [
+    body("name").notEmpty().withMessage("Debes ingresar un nombre de usuario."),
+    body("pass").notEmpty().withMessage("Debes ingresar una contraseña.")
 ];
 
 // ************ Controller Require ************
@@ -54,7 +58,8 @@ router.get("/register/", mainController.register);
 router.post("/register/", validationsRegisterForm, mainController.nuevoUsuario);
 
 
-router.get("/login", mainController.login);
+router.get("/login",mainController.login);
+router.post("/login",validationsLoginForm ,mainController.proccesLogin);
 
 router.get("/carrito", mainController.carrito);
 

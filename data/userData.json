@@ -1,16 +1,16 @@
 [
     {
-        "usuario": "Ariel",
-        "password": "123456",
-        "address": "Calle 1 458",
-        "zipcode": "6587",
-        "email": "ariel@dh.com"
+        "usuario": "Nicola",
+        "password": "$2a$10$rug1Fi68TtlRvFtUCf2JXO0/gQSTN7keTm2OuNbl1Q.D/zmHX3J1i",
+        "address": "asd",
+        "zipcode": "151",
+        "email": "nicola@gmail.com"
     },
     {
-        "usuario": "Ariel",
-        "password": "123456",
-        "address": "Calle 2 5787",
-        "zipcode": "6587",
-        "email": "mail@gmail.com"
+        "usuario": "asd",
+        "password": "$2a$10$ungA2ubIAe3OG6LiZiyvEuiqvXCC5Ww/oHcPSB2z4R/Zku2LRNvCO",
+        "address": "asdsa",
+        "zipcode": "51",
+        "email": "asds@gmail.com"
     }
 ]

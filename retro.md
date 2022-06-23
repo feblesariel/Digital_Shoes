@@ -59,6 +59,7 @@ Sprint 4
 
 -Inconvenientes: Laboral de cada integrante y responsabilidades adicionales.
 
+<<<<<<< HEAD
 -Adicional: Intentar reagrupar todas las carpetas mejorando el archivo.
 
 
@@ -75,3 +76,6 @@ Sprint 5
 
 -Inconvenientes: Laborales de cada integrante y responsabilidades personales.
 
+=======
+-Adicional: Intentar reagrupar todas las carpetas mejorando el archivo.
+>>>>>>> 06249296074a4e685602cfa50524f78e9faa02f5
