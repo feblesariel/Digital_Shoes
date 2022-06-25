@@ -1,1 +1,11 @@
-[]
+[
+ {
+  "id": 1,
+  "name": "Ariel",
+  "password": "$2a$10$ujajxM0drVbzcRWaxRRM6u0Z1hOUK/q36t8z4TgYuNlmU3j.jBseC",
+  "domicilio": "Calle 56",
+  "zipcode": "156",
+  "email": "a@gmail.com",
+  "imagen": "default_image.png"
+ }
+]

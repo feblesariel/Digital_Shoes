@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include("./partials/head.ejs")%>
+
+    <body>
+        <%-include("./partials/header.ejs")%>
+            <main>
+
+                <div class="contenedor-general" style="width: 30vw;">
+                <div class="contenedor-profile">
+                    <h1>Bienvenido <%=user.name%> !!
+                    </h1>
+                    <br>
+                    <div>
+                        <img class="imagen-profile" src="/images/<%=user.imagen%>">
+                    </div>
+                    <br>
+                    <h2>
+                        <%= user.email %>
+                    </h2>
+                    <br>
+                </div>
+            </div>
+            </main>
+            <%-include("./partials/footer.ejs")%>
+    </body>
+
+</html>

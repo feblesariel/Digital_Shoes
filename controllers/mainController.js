@@ -63,19 +63,18 @@ const mainController = {
         let defaultImage = "default_image.png";
 
         if (!errors.isEmpty()) {
-            console.log(errors);
-            return res.render("register", { errors: errors.array(), old: req.body })            
+            return res.render("register", { errors: errors.array(), old: req.body })
         }
 
         let userInDB = User.findByField("email", req.body.email);
-        
-        if (userInDB) {            
-            return res.render("register", { errors: [{msg: "Email ya registrado."}], old: req.body })
+
+        if (userInDB) {
+            return res.render("register", { errors: [{ msg: "Email ya registrado." }], old: req.body })
         }
-        
+
         let userToCreate = {
             ...req.body,
-            password: bcrypt.hashSync(req.body.pass, 10),
+            password: bcrypt.hashSync(req.body.password, 10),
             imagen: req.file ? req.file.filename : defaultImage
         }
 
@@ -89,14 +88,36 @@ const mainController = {
         res.render("login");
     },
 
-    proccesLogin: function (req, res) {
+    loginProcess: function (req, res) {
         let errors = validationResult(req);
 
         if (!errors.isEmpty()) {
             return res.render("login", { errors: errors.array(), old: req.body })
-        } else {
-            res.send("ESTAMOS TRABAJANDO");
         }
+
+        let userToLogin = User.findByField("email", req.body.email);
+        if (userToLogin) {
+            let isOkPassword = bcrypt.compareSync(req.body.password, userToLogin.password);
+            if (isOkPassword) {
+                delete userToLogin.password;
+                req.session.userLogged = userToLogin;
+                return res.redirect("/profile");
+            } else {
+                return res.render("login", { errors: [{ msg: "Contraseña incorrecta." }], old: req.body });
+            }
+        }
+        return res.render("login", { errors: [{ msg: "Usuario no registrado." }], old: req.body });
+    },
+
+    profile: function (req, res) { 
+        res.render("userProfile", {
+            user: req.session.userLogged
+        });
+    },
+
+    logout: function (req, res){
+        req.session.destroy();
+        return res.redirect("/");
     },
 
     carrito: function (req, res) {

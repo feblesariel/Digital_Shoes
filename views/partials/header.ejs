@@ -8,12 +8,18 @@
             <i class="fas fa-bars"></i>
         </label>
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/products">Productos</a></li>
-            <li><a href="/create">Vender</a></li>
-            <li><a href="/register">Registrate</a></li>
-            <li><a href="/login">Login <i class="fas fa-sign-in-alt"></i></a></li>
-            <li><a href="/carrito">Carrito <i class="fas fa-shopping-cart"></i></a></li>
+            <% if (locals.isLogged) { %>
+                <li><a href="/">Home</a></li>
+                <li><a href="/create">Vender</a></li>
+                <li><a href="/profile">Perfil <i class="fas fa-user"></i></i></a></li>                
+                <li><a href="/carrito">Carrito <i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="/logout">Logout <i class="fas fa-sign-in-alt"></i></a></li>
+                <% } else { %>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/products">Productos</a></li>
+                    <li><a href="/register">Registrate</a></li>
+                    <li><a href="/login">Login <i class="fas fa-sign-in-alt"></i></a></li>
+                    <% } %>
         </ul>
     </nav>
 </header>

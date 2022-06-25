@@ -5,6 +5,8 @@ const router = express.Router();
 const multer = require("multer");
 const path = require("path");
 const { body } = require("express-validator");
+const guestMiddleware = require("../middlewares/guestMiddleware");
+const authMiddleware = require("../middlewares/authMiddleware");
 
 // ************ Multer Config ************
 
@@ -27,7 +29,7 @@ const updateFile = multer({ storage });
 
 const validationsRegisterForm = [
     body("name").notEmpty().withMessage("Debes ingresar un nombre de usuario."),
-    body("pass").isLength({ min: 6 }).withMessage("La contraseña debe tener un minimo 6 caracteres."),
+    body("password").isLength({ min: 6 }).withMessage("La contraseña debe tener un minimo 6 caracteres."),
     body("domicilio").notEmpty().withMessage("Debes ingresar su domicilio."),
     body("zipcode").notEmpty().withMessage("Debes ingresar su codigo postal."),
     body("email").isEmail().withMessage("Debes ingresar tu correo."),
@@ -40,8 +42,8 @@ const validationsCreateForm = [
 ];
 
 const validationsLoginForm = [
-    body("name").notEmpty().withMessage("Debes ingresar un nombre de usuario."),
-    body("pass").notEmpty().withMessage("Debes ingresar una contraseña.")
+    body("email").isEmail().withMessage("Debes ingresar el correo electronico."),
+    body("password").isLength({ min: 6 }).withMessage("La contraseña debe tener un minimo 6 caracteres.")
 ];
 
 // ************ Controller Require ************
@@ -53,15 +55,19 @@ const mainController = require("../controllers/mainController")
 
 router.get("/", mainController.home);
 
-router.get("/create/", mainController.create);
+router.get("/create/", authMiddleware,mainController.create);
 router.post("/", updateFile.single("product-image"), validationsCreateForm ,mainController.store);
 
-router.get("/register/", mainController.register);
+router.get("/register/",guestMiddleware ,mainController.register);
 router.post("/register/", updateFile.single("user-image"), validationsRegisterForm, mainController.nuevoUsuario);
 
 
-router.get("/login",mainController.login);
-router.post("/login",validationsLoginForm ,mainController.proccesLogin);
+router.get("/login",guestMiddleware,mainController.login);
+router.post("/login",validationsLoginForm ,mainController.loginProcess);
+
+router.get("/profile",authMiddleware,mainController.profile);
+router.get("/logout",mainController.logout);
+
 
 router.get("/carrito", mainController.carrito);
 

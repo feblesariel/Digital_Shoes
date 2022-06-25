@@ -17,6 +17,17 @@ main {
     flex-direction: column;
 }
 
+/*--- PROFILE ---*/
+
+.contenedor-profile {
+    text-align: center;
+}
+
+.imagen-profile{
+    height: 150px;
+    width: 150px;
+}
+
 
 /*--- NAVBAR ---*/
 

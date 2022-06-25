@@ -1,8 +1,10 @@
 // ************ Require's ************
 
 const express = require('express');
+const session = require("express-session");
 const path = require('path');
 const methodOverride = require('method-override'); // Para poder usar los métodos PUT y DELETE
+const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 
 // ************ express() - (don't touch) ************
 
@@ -11,6 +13,12 @@ const app = express();
 // ************ Middlewares - (don't touch) ************
 
 const publicPath = path.resolve(__dirname, './public');
+app.use(session({
+    secret: "Secreto",
+    resave: false,
+    saveUninitialized: false,
+}));
+app.use(userLoggedMiddleware);
 app.use(express.static(publicPath));  // Indica donde estan los archivos estáticos /public
 app.use(express.urlencoded({ extended: false }));  // Captura la informacion enviada por POST
 app.use(express.json());
@@ -24,7 +32,7 @@ app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la 
 // ************ Route System require and use() ************
 
 const mainRouter = require("./routes/mainRouter");
-const productsRouter = require ("./routes/productsRouter")
+const productsRouter = require("./routes/productsRouter")
 
 app.use('/', mainRouter);
 app.use('/products', productsRouter);

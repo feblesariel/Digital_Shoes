@@ -12,12 +12,12 @@
                     <div class="contenedor-register">
                         <form action="/login" method="post">
                             <div class="register-individual">
-                                <label for="name"></label>
-                                <input type="text" name="name" id="name" class="campos" placeholder="Nombre de usuario" value="<%= locals.old && old.name ? old.name : "" %>">
+                                <label for="email"></label>
+                                <input type="email" name="email" id="email" class="campos" placeholder="Correo electronico" value="<%= locals.old && old.email ? old.email : "" %>">
                             </div>
                             <div class="register-individual">
-                                <label for="pass"></label>
-                                <input type="password" name="pass" id="pass" class="campos" placeholder="Constraseña">
+                                <label for="password"></label>
+                                <input type="password" name="password" id="password" class="campos" placeholder="Constraseña">
                             </div>
                             <br>
                             <div class="register-individual">
