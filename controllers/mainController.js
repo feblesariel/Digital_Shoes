@@ -63,13 +63,15 @@ const mainController = {
         if (!errors.isEmpty()) {
             return res.render("register", { errors: errors.array(), old: req.body })
         } else {
+            let defaultImage = "default_image.png"; 
             let passEncriptada = bcrypt.hashSync(req.body.pass , 10 );
             let newUser = {
                 usuario: req.body.name,
                 password: passEncriptada,
                 address: req.body.domicilio,
                 zipcode: req.body.zipcode,
-                email: req.body.email
+                email: req.body.email,
+                imagen: req.file ? req.file.filename : defaultImage
             }
             users.push(newUser);
             let usersJSON = JSON.stringify(users);

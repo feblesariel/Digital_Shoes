@@ -4,13 +4,15 @@
         "password": "$2a$10$rug1Fi68TtlRvFtUCf2JXO0/gQSTN7keTm2OuNbl1Q.D/zmHX3J1i",
         "address": "asd",
         "zipcode": "151",
-        "email": "nicola@gmail.com"
+        "email": "nicola@gmail.com",
+        "imagen": "default_image.png"
     },
     {
-        "usuario": "asd",
-        "password": "$2a$10$ungA2ubIAe3OG6LiZiyvEuiqvXCC5Ww/oHcPSB2z4R/Zku2LRNvCO",
-        "address": "asdsa",
-        "zipcode": "51",
-        "email": "asds@gmail.com"
+        "usuario": "Ariel",
+        "password": "$2a$10$Fpz094Ii6P.RiUVNcPDDseCdRyYAVLnMZkCoDW3V.GNVGVVUARmgu",
+        "address": "ADS",
+        "zipcode": "1515",
+        "email": "ad@gmail.com",
+        "imagen": "default_image.png"
     }
 ]

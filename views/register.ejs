@@ -11,7 +11,7 @@
                     <h2 class="titulares">Registro de usuario</h2>
                     <div class="contenedor-register">                        
 
-                        <form action="/register" method="post">
+                        <form action="/register" method="post" enctype="multipart/form-data">
                             <div class="register-individual">
                                 <label for="name"></label>
                                 <input type="text" name="name" id="name" class="campos" placeholder="Nombre de usuario"
@@ -42,6 +42,14 @@
                                 <input type="email" name="email" id="email" class="campos" placeholder="Email"
                                     value="<%= locals.old && old.email ? old.email : "" %>">
                             </div>
+
+
+                            <div class="register-individual">
+                                <label for="user-image"><h3>Imagen de usuario:</h3></label><br>
+                                <input type="file" name="user-image" id="user-image">
+                            </div>
+
+
                             <br>
                             <div class="register-individual">
                                 <button type="submit" class="botones">Registrarme</button>
