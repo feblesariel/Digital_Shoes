@@ -80,7 +80,7 @@ const mainController = {
 
         let userCreated = User.create(userToCreate);
 
-        res.redirect("/");
+        res.redirect("/login");
     },
 
 
