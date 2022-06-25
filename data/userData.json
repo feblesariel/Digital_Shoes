@@ -1,18 +1,1 @@
-[
-    {
-        "usuario": "Nicola",
-        "password": "$2a$10$rug1Fi68TtlRvFtUCf2JXO0/gQSTN7keTm2OuNbl1Q.D/zmHX3J1i",
-        "address": "asd",
-        "zipcode": "151",
-        "email": "nicola@gmail.com",
-        "imagen": "default_image.png"
-    },
-    {
-        "usuario": "Ariel",
-        "password": "$2a$10$Fpz094Ii6P.RiUVNcPDDseCdRyYAVLnMZkCoDW3V.GNVGVVUARmgu",
-        "address": "ADS",
-        "zipcode": "1515",
-        "email": "ad@gmail.com",
-        "imagen": "default_image.png"
-    }
-]
+[]

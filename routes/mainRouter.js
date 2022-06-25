@@ -8,11 +8,10 @@ const { body } = require("express-validator");
 
 // ************ Multer Config ************
 
-// Product config
 
-const product_storage = multer.diskStorage({
+const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        let nombreCarpeta = path.join(__dirname, "../public/product_images");
+        let nombreCarpeta = path.join(__dirname, "../public/images");
         cb(null, nombreCarpeta)
     },
     filename: function (req, file, cb) {
@@ -21,22 +20,8 @@ const product_storage = multer.diskStorage({
     }
 });
 
-const updateFile = multer({ product_storage });
+const updateFile = multer({ storage });
 
-// User config
-
-const user_storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        let nombreCarpeta = path.join(__dirname, "../public/user_images");
-        cb(null, nombreCarpeta)
-    },
-    filename: function (req, file, cb) {
-        let nombreImagen = "img-" + Date.now() + path.extname(file.originalname);
-        cb(null, nombreImagen);
-    }
-});
-
-const updateFiles = multer({ user_storage });
 
 // ************ Validations ************
 
@@ -72,7 +57,7 @@ router.get("/create/", mainController.create);
 router.post("/", updateFile.single("product-image"), validationsCreateForm ,mainController.store);
 
 router.get("/register/", mainController.register);
-router.post("/register/",updateFiles.single("user-image") ,validationsRegisterForm, mainController.nuevoUsuario);
+router.post("/register/", updateFile.single("user-image"), validationsRegisterForm, mainController.nuevoUsuario);
 
 
 router.get("/login",mainController.login);

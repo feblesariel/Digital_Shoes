@@ -5,6 +5,7 @@ const path = require("path");
 const { validationResult } = require("express-validator");
 const { stringify } = require("querystring");
 const bcrypt = require('bcryptjs');
+const User = require("../models/User");
 
 
 // ************ Archivo de usuarios ************
@@ -32,12 +33,12 @@ const mainController = {
 
     store: function (req, res) {
 
-        let errors = validationResult (req);
+        let errors = validationResult(req);
 
         if (!errors.isEmpty()) {
-            return res.render("product-create-form", { errors: errors.array(), old: req.body})
+            return res.render("product-create-form", { errors: errors.array(), old: req.body })
         } else {
-            let defaultImage = "default-image.png";            
+            let defaultImage = "default-image.png";
             let nuevoProducto = {
                 id: products.length + 1,
                 nombre: req.body.nombre,
@@ -59,27 +60,30 @@ const mainController = {
     nuevoUsuario: function (req, res) {
 
         let errors = validationResult(req);
+        let defaultImage = "default_image.png";
 
         if (!errors.isEmpty()) {
-            return res.render("register", { errors: errors.array(), old: req.body })
-        } else {
-            let defaultImage = "default_image.png"; 
-            let passEncriptada = bcrypt.hashSync(req.body.pass , 10 );
-            let newUser = {
-                usuario: req.body.name,
-                password: passEncriptada,
-                address: req.body.domicilio,
-                zipcode: req.body.zipcode,
-                email: req.body.email,
-                imagen: req.file ? req.file.filename : defaultImage
-            }
-            users.push(newUser);
-            let usersJSON = JSON.stringify(users);
-            fs.writeFileSync(usersFilePath, usersJSON);
-
-            res.redirect("/")
+            console.log(errors);
+            return res.render("register", { errors: errors.array(), old: req.body })            
         }
+
+        let userInDB = User.findByField("email", req.body.email);
+        
+        if (userInDB) {            
+            return res.render("register", { errors: [{msg: "Email ya registrado."}], old: req.body })
+        }
+        
+        let userToCreate = {
+            ...req.body,
+            password: bcrypt.hashSync(req.body.pass, 10),
+            imagen: req.file ? req.file.filename : defaultImage
+        }
+
+        let userCreated = User.create(userToCreate);
+
+        res.redirect("/");
     },
+
 
     login: function (req, res) {
         res.render("login");
