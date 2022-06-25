@@ -69,7 +69,7 @@ router.get("/profile",authMiddleware,mainController.profile);
 router.get("/logout",mainController.logout);
 
 
-router.get("/carrito", mainController.carrito);
+router.get("/carrito", authMiddleware,mainController.carrito);
 
 
 module.exports = router;

@@ -5,6 +5,7 @@ const router = express.Router();
 const multer = require ("multer");
 const path = require ("path");
 const {body} = require ("express-validator");
+const authMiddleware = require ("../middlewares/authMiddleware");
 
 // ************ Multer Config ************
 
@@ -40,7 +41,7 @@ router.get("/", productsController.products);
 
 router.get("/:id/", productsController.detail);
 
-router.get("/edit/:id/", productsController.edit);
+router.get("/edit/:id/", authMiddleware,productsController.edit);
 
 router.put("/edit/:id/", updateFile.single("product-image") , validationsEditForm ,productsController.update);
 

@@ -29,9 +29,14 @@
 
                 <a href="#" type="submit" class="botones-DETAIL">Comprar</a>
 
+                <% if (locals.isLogged) { %>
+
                 <a href="/products/edit/<%=productoSeleccionado.id%>" type="submit" class="botones-DETAIL">Editar</a>
 
                 <form action="/products/<%=productoSeleccionado.id%>?_method=delete" method="post" style="display:contents"><button type="submit" class="botones-DETAIL">Eliminar</button></form>
+
+                <% } %> 
+
             </div>
 
             <!-- FOOTER -->
