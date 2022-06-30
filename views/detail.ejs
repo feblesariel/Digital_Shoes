@@ -27,7 +27,10 @@
 
             <div class="contenedor-DETAIL">
 
-                <a href="#" type="submit" class="botones-DETAIL">Comprar</a>
+                <form action="/products/carrito/<%=productoSeleccionado.id%>" method="POST">
+                    <button type="submit" class="botones-DETAIL">Comprar</button>
+                </form>
+
 
                 <% if (locals.isLogged) { %>
 

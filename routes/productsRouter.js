@@ -47,6 +47,8 @@ router.put("/edit/:id/", updateFile.single("product-image") , validationsEditFor
 
 router.delete("/:id/",productsController.destroy);
 
+router.post("/carrito/:id", authMiddleware ,productsController.carrito);
+
 
 
 module.exports = router;

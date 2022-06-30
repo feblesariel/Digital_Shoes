@@ -1,1 +1,20 @@
-[]
+[
+ {
+  "id": 1,
+  "name": "Camila",
+  "password": "$2a$10$mYTbmHk4Nr.FF7pyZOIV3..6Roz/zbseyaSjLzCeBaivS4OvRDVO.",
+  "domicilio": "calle 98",
+  "zipcode": "1658",
+  "email": "camila@gmail.com",
+  "imagen": "default_image.png"
+ },
+ {
+  "id": 2,
+  "name": "Nicola",
+  "password": "$2a$10$g/LNPAVbmXyAwqWDyBPd1OSUIaq6PxJQPceGFXcgJdwBVlaHJGY/e",
+  "domicilio": "Calle 1",
+  "zipcode": "1565",
+  "email": "n@n.com",
+  "imagen": "default_image.png"
+ }
+]

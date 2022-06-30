@@ -80,6 +80,25 @@ const productsController = {
         let productJSON = JSON.stringify(nuevoArray);
         fs.writeFileSync(productsFilePath, productJSON);
         res.redirect("/products");
+    },
+
+    carrito: function (req, res) {
+        let idParams = req.params.id;
+        if (!req.session.carrito)
+        {
+            req.session.carrito = [];
+        }        
+        let temp = 0;
+        let temp2 = 0;
+
+        for (let i = 0 ; i < products.length ; i++){
+            if (products[i].id == idParams){ 
+                temp = products[i]; 
+                req.session.carrito.push(temp);
+            }
+        }
+        temp2 = req.session.carrito;
+        return res.render("carrito", {temp2});
     }
 }
 

@@ -29,6 +29,22 @@ main {
 }
 
 
+/*--- CARRITO ---*/
+
+.contenedor-carrito {
+    height: 55vh;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+}
+
+.contenedor-item-carrito {
+
+    width: 200px;
+    height: 200px;
+
+}
+
 /*--- NAVBAR ---*/
 
 nav {
