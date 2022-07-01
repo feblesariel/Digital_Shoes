@@ -121,7 +121,8 @@ const mainController = {
     },
 
     carrito: function (req, res) {
-        res.render("carrito");
+        let temp2 = req.session.carrito;
+        res.render("carrito", {temp2});
     }
 
 }

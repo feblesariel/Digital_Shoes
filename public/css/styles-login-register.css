@@ -12,11 +12,19 @@ main {
     background-color: white;
     margin: auto;
     width: 100vw;
-    height: 65vh;
+    height: 60vh;
     display: flex;
     flex-direction: column;
 }
 
+.main-carrito {
+    background-color: white;
+    margin: auto;
+    width: 100vw;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+}
 /*--- PROFILE ---*/
 
 .contenedor-profile {
@@ -51,6 +59,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 40px;
 }
 .contenedor-imagen-carrito{
     flex-grow: 0.33;
