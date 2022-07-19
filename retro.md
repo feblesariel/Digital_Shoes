@@ -75,3 +75,16 @@ Sprint 5
 
 -Inconvenientes: Laborales de cada integrante y responsabilidades personales.
 
+
+Sprint 6
+
+
+-Comenzar hacer: Script de creación de estructura de base de datos, creación de carpeta Sequelize y CRUD.
+
+-Hacer mas: Coordinar mas llamadas en el grupo.
+
+-Continuar haciendo: Funcionalidades en el Front-end.
+
+-Hacer menos: Demorar mas tiempo de lo estipulado en las cargas de GIT.
+
+-Inconvenientes: Disponibilidad de horas de trabajo de los ingtegrantes.
