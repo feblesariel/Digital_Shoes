@@ -49,7 +49,7 @@ const mainController = {
             products.push(nuevoProducto);
             let productJSON = JSON.stringify(products);
             fs.writeFileSync(productsFilePath, productJSON);
-            res.redirect("/products");
+            res.render("products", {products});
         }
     },
 

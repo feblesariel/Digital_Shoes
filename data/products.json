@@ -33,5 +33,12 @@
         "precio": "2000.00",
         "imagen": "zapatillas.png",
         "descripcion": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim qui cupiditate autem beatae velit optio at voluptates, et architecto ipsam quae non aliquam nam fugiat vitae quidem facere laboriosam officiis."
+    },
+    {
+        "id": 6,
+        "nombre": "Zapatilla Default",
+        "precio": "8500",
+        "descripcion": "Precio y calidad",
+        "imagen": "default-image.png"
     }
 ]
