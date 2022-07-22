@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include("./partials/head.ejs")%>
+
+    <body>
+        <%-include("./partials/header.ejs")%>
+            <main>
+                <br>
+                <div class="contenedor-general">
+                    <h2 class="titulares">Formulario de creacion de productos</h2>
+                    <div class="contenedor-register">                        
+
+                        <form action="/products/create" method="post" enctype="multipart/form-data">
+
+                            <div class="register-individual">
+                                <label for="nombre"></label>
+                                <input type="text" name="nombre" id="nombre" class="campos" placeholder="Nombre del producto" value="<%= locals.old && old.nombre ? old.nombre : "" %>">                                    
+                            </div>
+
+                            <div class="register-individual">
+                                <label for="precio"></label>
+                                <input type="text" name="precio" id="precio" class="campos" placeholder="Precio del producto" value="<%= locals.old && old.precio ? old.precio : "" %>">
+                            </div>
+
+                            <div class="register-individual">
+                                <label for="descripcion"></label>
+                                <input type="descripcion" name="descripcion" id="descripcion" class="campos"
+                                    placeholder="Descripcion" value="<%= locals.old && old.descripcion ? old.descripcion : "" %>">
+                            </div>
+
+                            <div class="register-individual">
+                                <label for="product-image"><h3>Imagen de producto:</h3></label><br>
+                                <input type="file" name="product-image" id="product-image">
+                            </div><br>
+
+                            <div class="register-individual">
+                                <button type="submit" class="botones">Guardar</button>
+                            </div>
+                            <% if (locals.errors) { errors.forEach (error=> { %>
+                                <p class="errorMessageRegister">*<%= error.msg %>
+                                </p>
+                                <% })} %>                           
+
+                        </form>
+                    </div>
+                </div>
+            </main>
+            <%-include("./partials/footer.ejs")%>
+    </body>
+
+</html>

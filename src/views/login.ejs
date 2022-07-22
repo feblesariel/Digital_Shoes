@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include("./partials/head.ejs")%>
+
+    <body>
+        <%-include("./partials/header.ejs")%>
+            <main>
+                <br>
+                <div class="contenedor-general">
+                    <h2 class="titulares">Iniciar Sesión</h2>
+                    <div class="contenedor-register">
+                        <form action="/users/login/" method="post">
+                            <div class="register-individual">
+                                <label for="email"></label>
+                                <input type="email" name="email" id="email" class="campos" placeholder="Correo electronico" value="<%= locals.old && old.email ? old.email : "" %>">
+                            </div>
+                            <div class="register-individual">
+                                <label for="password"></label>
+                                <input type="password" name="password" id="password" class="campos" placeholder="Constraseña">
+                            </div>
+                            <br>
+                            <div class="register-individual">
+                                <button type="submit" class="botones">Continuar</button>
+                                <br>
+                                <br>
+                                <a href="/users/login" style="color: grey;">¿Olvido su contraseña?</a>
+                            </div>
+                            <% if (locals.errors) { errors.forEach (error=> { %>
+                                <p class="errorMessageRegister">*<%= error.msg %>
+                                </p>
+                                <% })} %>  
+                        </form>
+                    </div>
+                </div>
+            </main>
+            <%-include("./partials/footer.ejs")%>
+    </body>
+
+</html>

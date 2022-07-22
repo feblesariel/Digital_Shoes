@@ -27,15 +27,15 @@ app.use(methodOverride('_method'));  // Para poder pisar el method="POST" en el 
 // ************ Template Engine - (don't touch) ************
 
 app.set("view engine", "ejs");
-app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la carpeta de las Vistas
+app.set('views', path.join(__dirname, '/src/views')); // Define la ubicación de la carpeta de las Vistas
 
 // ************ Route System require and use() ************
 
-const mainRouter = require("./routes/mainRouter");
-const productsRouter = require("./routes/productsRouter")
+const usersRouter = require("./src/routes/users");
+const productsRouter = require("./src/routes/products")
 
-app.use('/', mainRouter);
-app.use('/products', productsRouter);
+app.use('/users', usersRouter);
+app.use('/', productsRouter);
 
 // ************ Run server ************
 
