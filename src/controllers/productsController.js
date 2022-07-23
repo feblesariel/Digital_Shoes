@@ -5,6 +5,14 @@ const path = require("path");
 const { validationResult } = require("express-validator");
 const { stringify } = require("querystring");
 
+//--- DB
+
+const db = require('../database/models');
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
+
+const Product = db.Product;
+
 
 // ************ Archivo de productos ************
 

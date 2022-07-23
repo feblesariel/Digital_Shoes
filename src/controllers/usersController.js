@@ -7,6 +7,13 @@ const { stringify } = require("querystring");
 const bcrypt = require('bcryptjs');
 const User = require("../../models/User");
 
+//--- DB
+
+const db = require('../database/models');
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
+
+//const User = db.User;
 
 // ************ Archivo de usuarios ************
 
