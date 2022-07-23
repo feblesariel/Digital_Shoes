@@ -5,20 +5,15 @@ const path = require("path");
 const { validationResult } = require("express-validator");
 const { stringify } = require("querystring");
 const bcrypt = require('bcryptjs');
-const User = require("../../models/User");
+//const User = require("../../models/User");  // MODELO USER
 
 //--- DB
 
 const db = require('../database/models/index.js');
 const sequelize = db.sequelize;
-const { Op } = require("sequelize");
+const { Op, where } = require("sequelize");
 
-//const User = db.User;
-
-// ************ Archivo de usuarios ************
-
-const usersFilePath = path.join(__dirname, "../data/users.json");
-const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+const User = db.User;
 
 
 // ************ Controllers ************
@@ -36,18 +31,18 @@ const usersController = {
             return res.render("login", { errors: errors.array(), old: req.body })
         }
 
-        let userToLogin = User.findByField("email", req.body.email);
-        if (userToLogin) {
-            let isOkPassword = bcrypt.compareSync(req.body.password, userToLogin.password);
-            if (isOkPassword) {
-                delete userToLogin.password;
-                req.session.userLogged = userToLogin;
-                return res.redirect("/users/profile");
-            } else {
-                return res.render("login", { errors: [{ msg: "Contraseña incorrecta." }], old: req.body });
+        User.findOne({ where: { email: req.body.email } }).then(function (usuario) {
+            if (usuario) {
+                let isOkPassword = bcrypt.compareSync(req.body.password, usuario.contraseña);
+                if (isOkPassword) {
+                    req.session.userLogged = usuario;
+                    return res.redirect("/users/profile");
+                } else {
+                    return res.render("login", { errors: [{ msg: "Contraseña incorrecta." }], old: req.body });
+                }
             }
-        }
-        return res.render("login", { errors: [{ msg: "Usuario no registrado." }], old: req.body });
+            return res.render("login", { errors: [{ msg: "Usuario no registrado." }], old: req.body });
+        })
     },
 
     register: function (req, res) {
@@ -63,30 +58,31 @@ const usersController = {
             return res.render("register", { errors: errors.array(), old: req.body })
         }
 
-        let userInDB = User.findByField("email", req.body.email);
+        User.findOne({ where: { email: req.body.email } }).then(function (usuario) {
+            if (usuario) {
+                return res.render("register", { errors: [{ msg: "Email ya registrado." }], old: req.body })
+            }
+        })
 
-        if (userInDB) {
-            return res.render("register", { errors: [{ msg: "Email ya registrado." }], old: req.body })
-        }
+        User.create(
+            {
+                email: req.body.email,
+                contraseña: bcrypt.hashSync(req.body.password, 10),
+                nombre: req.body.name,
+                domicilio: req.body.domicilio,
+                zipcode: req.body.zipcode,
+                imagen: req.file ? req.file.filename : defaultImage,
+            }
+        ).then(() => { return res.redirect("/users/login") })
+        .catch(error => res.send(error));
 
-        let userToCreate = {
-            ...req.body,
-            password: bcrypt.hashSync(req.body.password, 10),
-            imagen: req.file ? req.file.filename : defaultImage
-        }
-
-        let userCreated = User.create(userToCreate);
-
-        res.redirect("/users/login");
     },
 
-    profile: function (req, res) { 
-        res.render("userProfile", {
-            user: req.session.userLogged
-        });
+    profile: function (req, res) {
+        res.render("userProfile", { user: req.session.userLogged });
     },
 
-    logout: function (req, res){
+    logout: function (req, res) {
         req.session.destroy();
         return res.redirect("/");
     }

@@ -1,10 +1,19 @@
 const fs = require("fs");
 
+const db = require('../src/database/models/index.js');
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
+
+const Usuario = db.User;
+
 const User = {
+
     fileName: "./src/data/users.json",
 
     getData: function () {
-        return JSON.parse(fs.readFileSync(this.fileName, "utf-8"));
+
+        return  JSON.parse(fs.readFileSync(this.fileName, "utf-8"));
+
     },
 
     generateId: function () {

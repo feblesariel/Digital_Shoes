@@ -12,7 +12,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: true
         },
         contraseña: {
-            type: dataTypes.INTEGER(20),
+            type: dataTypes.STRING(100),
             allowNull: true
         },
         nombre: {
@@ -29,7 +29,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(100),
         },
         admin: {
-            type: dataTypes.BOOLEAN
+            type: dataTypes.BOOLEAN, defaultValue: false
         }  
     };
     let config = {
