@@ -7,17 +7,11 @@ const { stringify } = require("querystring");
 
 //--- DB
 
-const db = require('../database/models');
+const db = require('../database/models/index.js');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 
 const Product = db.Product;
-
-
-// ************ Archivo de productos ************
-
-const productsFilePath = path.join(__dirname, "../data/products.json");
-const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
 
 // ************ Controllers ************
@@ -25,23 +19,22 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 const productsController = {
 
     home: function (req, res) {
-        res.render("home", { products: products });
+        Product.findAll().then(products => {
+            res.render('home', { products })
+        });
     },
 
     products: function (req, res) {
-        res.render("products", { products: products });
+        Product.findAll().then(products => {
+            res.render('products', { products })
+        });
     },
 
     detail: function (req, res) {
 
-        let idParams = req.params.id;
-        let productoSeleccionado = 0;
-        for (let i = 0; i < products.length; i++) {
-            if (products[i].id == idParams) {
-                productoSeleccionado = products[i];
-            }
-        }
-        res.render("detail", { productoSeleccionado: productoSeleccionado });
+        Product.findByPk(req.params.id).then(productoSeleccionado => {
+            res.render('detail', { productoSeleccionado });
+        });
     },
 
     create: function (req, res) {
@@ -49,94 +42,86 @@ const productsController = {
     },
 
     createProcces: function (req, res) {
-
         let errors = validationResult(req);
-
+        let defaultImage = "default-image.png";
         if (!errors.isEmpty()) {
             return res.render("product-create-form", { errors: errors.array(), old: req.body })
         } else {
-            let defaultImage = "default-image.png";
-            let nuevoProducto = {
-                id: products.length + 1,
-                nombre: req.body.nombre,
-                precio: req.body.precio,
-                descripcion: req.body.descripcion,
-                imagen: req.file ? req.file.filename : defaultImage
-            }
-            products.push(nuevoProducto);
-            let productJSON = JSON.stringify(products);
-            fs.writeFileSync(productsFilePath, productJSON);
-            res.render("products", {products});
+            Product.create(
+                {
+                    nombre: req.body.nombre,
+                    precio: req.body.precio,
+                    imagen: req.file ? req.file.filename : defaultImage,
+                    descripcion: req.body.descripcion
+                }
+            )
+                .then(() => { return res.redirect('/products') })
+                .catch(error => res.send(error))
         }
     },
 
     edit: function (req, res) {
-        let idParams = req.params.id;
-        let productToEdit = 0;
-        let old = 0;
 
-        for (let i = 0; i < products.length; i++) {
-            if (products[i].id == idParams) {
-                productToEdit = products[i];
-                old = products[i];
-            }
-        }
-
-        res.render("product-edit-form", { productToEdit: productToEdit, old: old });
+        Product.findByPk(req.params.id).then(productToEdit => {
+            let old = productToEdit;
+            res.render('product-edit-form', { productToEdit: productToEdit, old: old });
+        });
     },
 
     editProcces: function (req, res) {
-        let errors = validationResult(req);
-        let idParams = req.params.id;
 
+        let errors = validationResult(req);
+        let defaultImage = "default-image.png";
         if (!errors.isEmpty()) {
             return res.render("product-edit-form", { errors: errors.array(), old: req.body })
         } else {
-            let defaultImage = "default-image.png";
-            let productoActualizado = {
-                id: req.params.id,
-                nombre: req.body.nombre,
-                precio: req.body.precio,
-                descripcion: req.body.descripcion,
-                imagen: req.file ? req.file.filename : defaultImage
-            }
-            let nuevoArray = products.filter(product => product.id != idParams);
-            nuevoArray.push(productoActualizado);
-            let productJSON = JSON.stringify(nuevoArray);
-            fs.writeFileSync(productsFilePath, productJSON);
-            res.redirect("/products/detail/" + idParams);
+            let productId = req.params.id;
+            Product
+                .update(
+                    {
+                        nombre: req.body.nombre,
+                        precio: req.body.precio,
+                        imagen: req.file ? req.file.filename : defaultImage,
+                        descripcion: req.body.descripcion
+                    },
+                    {
+                        where: { id: productId }
+                    })
+                .then(() => {
+                    return res.redirect('/products')
+                })
+                .catch(error => res.send(error))
         }
     },
 
     destroy: function (req, res) {
-        let idParams = req.params.id;
-        let nuevoArray = products.filter(product => product.id != idParams);
-        let productJSON = JSON.stringify(nuevoArray);
-        fs.writeFileSync(productsFilePath, productJSON);
-        res.redirect("/products");
+
+        let productId = req.params.id;
+        Product
+        .destroy({where: {id: productId}, force: true}) // force: true es para asegurar que se ejecute la acción
+        .then(()=>{
+            return res.redirect('/products')})
+        .catch(error => res.send(error))
     },
 
     carrito: function (req, res) {
-        let temp2 = req.session.carrito;
-        res.render("carrito", {temp2});
+        let temporal = req.session.carrito;
+        res.render("carrito", { temporal });
     },
 
     carritoProcces: function (req, res) {
-        let idParams = req.params.id;
-        if (!req.session.carrito) {
+
+        let temporal = [];
+        if (!req.session.carrito){
             req.session.carrito = [];
         }
-        let temp = 0;
-        let temp2 = 0;
 
-        for (let i = 0; i < products.length; i++) {
-            if (products[i].id == idParams) {
-                temp = products[i];
-                req.session.carrito.push(temp);
-            }
-        }
-        temp2 = req.session.carrito;
-        return res.render("carrito", { temp2 });
+        Product.findByPk(req.params.id).then(item => {
+            req.session.carrito.push(item);
+            temporal = req.session.carrito;            
+            return res.render("carrito", { temporal });
+        });
+
     }
 }
 

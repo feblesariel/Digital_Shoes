@@ -33,6 +33,7 @@ module.exports = (sequelize, dataTypes) => {
         }  
     };
     let config = {
+        tableName: "usuario",
         timestamps: false
     }
 

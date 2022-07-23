@@ -9,7 +9,7 @@ const User = require("../../models/User");
 
 //--- DB
 
-const db = require('../database/models');
+const db = require('../database/models/index.js');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 

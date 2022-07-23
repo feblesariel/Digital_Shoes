@@ -1,1 +1,11 @@
-[]
+[
+ {
+  "id": 1,
+  "name": "a",
+  "password": "$2a$10$Zlx4GT6FRVtU4bV4YfNShev7LrPVCCLZQFhTwMvtozwXfI04LBxfa",
+  "domicilio": "a",
+  "zipcode": "1",
+  "email": "a@a.com",
+  "imagen": "default_image.png"
+ }
+]
