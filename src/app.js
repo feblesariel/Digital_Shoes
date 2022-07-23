@@ -4,7 +4,7 @@ const express = require('express');
 const session = require("express-session");
 const path = require('path');
 const methodOverride = require('method-override'); // Para poder usar los métodos PUT y DELETE
-const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
+const userLoggedMiddleware = require("../middlewares/userLoggedMiddleware");
 
 // ************ express() - (don't touch) ************
 
@@ -12,7 +12,7 @@ const app = express();
 
 // ************ Middlewares - (don't touch) ************
 
-const publicPath = path.resolve(__dirname, './public');
+const publicPath = path.resolve(__dirname, '../public');
 app.use(session({
     secret: "Secreto",
     resave: false,
@@ -27,12 +27,12 @@ app.use(methodOverride('_method'));  // Para poder pisar el method="POST" en el 
 // ************ Template Engine - (don't touch) ************
 
 app.set("view engine", "ejs");
-app.set('views', path.join(__dirname, '/src/views')); // Define la ubicación de la carpeta de las Vistas
+app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la carpeta de las Vistas
 
 // ************ Route System require and use() ************
 
-const usersRouter = require("./src/routes/users");
-const productsRouter = require("./src/routes/products")
+const usersRouter = require("./routes/users");
+const productsRouter = require("./routes/products")
 
 app.use('/users', usersRouter);
 app.use('/', productsRouter);
