@@ -187,7 +187,7 @@ input[type="checkbox"]{
 
 .product-card-DETAIL{
   z-index: 1;
-  background: rgb(169, 170, 170);
+  background: lightgray;
   position: relative;
   width: 50vw;
   height: 50vh;
@@ -206,10 +206,10 @@ input[type="checkbox"]{
 
 .product .product-card{
   z-index: 1;
-  background: rgb(169, 170, 170);
+  background: lightgray;
   position: relative;
   width: 30vw;
-  height: 65vh;
+  height: 50vh;
   margin: 40px;
   border-radius: 10px;
 }
@@ -218,7 +218,7 @@ input[type="checkbox"]{
 .product .product-card .product-img{
   z-index: 1;
   position: absolute;
-  max-width: 400px;
+  max-width: 315px;
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -259,7 +259,7 @@ input[type="checkbox"]{
 
 .price-DETAIL {
     z-index: 2;
-    color: #fff;
+    color: black;
     position: absolute;
     width: 100%;
     text-align: center;
