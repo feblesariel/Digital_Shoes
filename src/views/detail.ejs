@@ -28,15 +28,15 @@
             <div class="contenedor-DETAIL">
 
                 <form action="/products/carrito/<%=productoSeleccionado.id%>" method="POST">
-                    <button type="submit" class="botones-DETAIL">Comprar</button>
+                    <button type="submit" class="botones-DETAIL">COMPRAR</button>
                 </form><br><br>
 
 
                 <% if (locals.isLogged) { %>
 
-                <a href="/products/edit/<%=productoSeleccionado.id%>" type="submit" class="botones-DETAIL">Editar</a>
+                <a href="/products/edit/<%=productoSeleccionado.id%>" type="submit" class="botones-DETAIL">EDITAR</a>
 
-                <form action="/products/delete/<%=productoSeleccionado.id%>?_method=delete" method="post" style="display:contents"><button type="submit" class="botones-DETAIL">Eliminar</button></form>
+                <form action="/products/delete/<%=productoSeleccionado.id%>?_method=delete" method="post" style="display:contents"><button type="submit" class="botones-DETAIL">ELIMINAR</button></form>
 
                 <% } %> 
 
