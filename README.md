@@ -35,7 +35,7 @@ Ejecutar SCRIPT SQL alojado en la carpeta "DB_INFO"
 Start
 
 ```
-  npm test
+  npm start
 
 ```
 
