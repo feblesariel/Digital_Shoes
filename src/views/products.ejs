@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<%-include("./partials/head.ejs")%>
+
+  <body>
+
+    <div class="container">
+
+      <%-include("./partials/header.ejs")%>
+
+        <main class="bg-white pb-5">
+
+          <img src="/images/banner-main.jpg" class="img-fluid pb-3" alt="...">
+
+          <p class="h2 text-start p-3">Nuestros productos</p>
+
+          <div class="container p-3">
+            <div class="row">
+
+              <% products.forEach((product)=> { %>
+
+                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 p-3">
+                    <div class="card mx-auto shadow-lg" style="width: 20rem;">
+                      <img src="/images/products/<%=product.imagen%>" class="card-img-top p-3" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">
+                          <%= product.nombre%>
+                        </h5>
+                      </div>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                          $<%= product.precio%>
+                        </li>
+                      </ul>
+                      <div class="card-body">
+                        <a href="/products/detail/<%=product.id%>">
+                          <button type="submit" class="btn btn-outline-secondary">DETALLE</button>
+                        </a>
+                      </div>
+                    </div>
+                </div>
+
+                <% }) %>
+
+            </div>
+          </div>
+
+
+        </main>
+
+        <%-include("./partials/footer.ejs")%>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"></script>
+  </body>
+
+</html>

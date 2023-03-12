@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+<%-include("./partials/head.ejs")%>
+
+    <body>
+
+        <div class="container">
+
+            <%-include("./partials/header.ejs")%>
+
+                <main class="bg-white pb-5">
+
+                    <img src="/images/banner-main.jpg" class="img-fluid pb-3" alt="...">
+
+                    <p class="h2 text-center p-3">Detalle de producto</p>
+
+
+                    <div class="container p-3">
+
+
+                        <div class="row">
+
+                            <div class="mx-auto col-sm-12 col-md-12 col-lg-12 col-xl-12">
+
+                                <div class="card mx-auto shadow-lg" style="width: 35rem;">
+                                    <img src="/images/products/<%=productoSeleccionado.imagen%>" class="card-img-top p-3"
+                                        alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <%=productoSeleccionado.nombre%>
+                                        </h5>
+                                        <p class="card-text">
+                                            <%=productoSeleccionado.descripcion%>
+                                        </p>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Unidades disponibles
+                                            <%=productoSeleccionado.stock.unidades%>
+                                        </li>
+                                        <li class="list-group-item">$<%=productoSeleccionado.precio%>
+                                        </li>
+                                    </ul>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                        <form action="/products/carrito/<%=productoSeleccionado.id%>" method="POST">
+                                            <button type="submit" class="btn btn-outline-success w-50">Comprar</button>
+                                        </form>
+                                            </div>
+
+                                            <% if (locals.isLogged/*&& locals.isAdmin*/) { %>
+                                            <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 text-end">
+                                                <a href="/products/edit/<%=productoSeleccionado.id%>">
+                                                    <button type="submit" 
+                                                        class="btn btn-outline-secondary w-100">Editar</button>
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 text-end">
+                                                <form
+                                                    action="/products/delete/<%=productoSeleccionado.id%>?_method=delete"
+                                                    method="post" style="display:contents">
+                                                <button type="submit"
+                                                    class="btn btn-outline-danger w-100">Eliminar</button>
+                                                </form>
+                                            </div>
+                                                <% } %>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </main>
+
+                <%-include("./partials/footer.ejs")%>
+
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+            crossorigin="anonymous"></script>
+    </body>
+
+</html>
